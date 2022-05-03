@@ -10,7 +10,7 @@ public class Point3DMain {
 		Point3D p2 = new Point3D(2.0, 3.0, 1.0);
 		System.out.println("p2 : " + p2);
 		
-		Point3D p3 = (Point3D) p2.clone();
+		Point3D p3 = (Point3D) p2.clone(); // p2의 값을 p3로 복제
 		System.out.println("p3 : " + p3);
 		
 		System.out.println(p2.equals(p3) ? "p2와 p3는 같은 값" : "p2과 p3는 다른 값"); // p1과 p2는 같은 값

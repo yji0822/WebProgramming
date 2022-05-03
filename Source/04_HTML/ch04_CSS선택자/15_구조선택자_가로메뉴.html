@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div#nav { width:800px; margin:0 auto; }
+        div#nav ul {
+            overflow:hidden;
+        }
+        #nav ul li {
+            border: 1px solid gray;
+            text-align: center;
+            padding: 5px;
+            margin: 3px;
+            font-size: 20px;
+            font-weight: bold;
+            list-style: none;
+            overflow: hidden;
+        }
+        #nav ul li a { 
+            text-decoration:none; 
+            color:black; 
+            float:left;
+        }
+        #nav ul li:nth-child(2n+1) {
+            background-color: orange;
+            float: left;
+        }
+        #nav ul li:nth-child(2n) {
+            background-color: yellow;
+            float: left;
+        }
+        #nav ul li:first-child {
+             background-color: lightgray;
+             border-radius: 20px 0px 0px 20px;
+             float: left;
+        }
+        #nav ul li:last-child {
+             background-color: lightgray;
+             border-radius: 0px 20px 20px 0px;
+             float: left;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="nav">
+        <ul>
+            <li><a href="#menu1">menu1</a></li>
+            <li><a href="#menu2">menu2</a></li>
+            <li><a href="#menu3">menu3</a></li>
+            <li><a href="#menu4">menu4</a></li>
+            <li><a href="#menu5">menu5</a></li>
+            <li><a href="#menu6">menu6</a></li>
+            <li><a href="#menu7">menu7</a></li>
+            <li><a href="#menu8">menu8</a></li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

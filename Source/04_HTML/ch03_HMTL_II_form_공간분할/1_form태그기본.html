@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        
+       td{
+           text-align:center; /*가운데 정렬*/
+           padding : 5px; /*안쪽 여백*/
+       }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- 상당히 불편 -->
+    1. p를 이용해서 만든 로그인 창
+    <form>
+        <!-- 아이디랑 비밀번호 텍스트 박스 추가 -->
+        <p>아 이 디&nbsp;&nbsp;<input type="text" name="uid" /></p>
+        <p>비밀번호&nbsp;<input type="text" name="upw" /></p>
+    </form>
+
+    
+    <br />
+    2. form-table로 생성한 로그인
+    <br />
+    <input type="text" name="nickname" />
+    <!-- method="get"이 default-->
+    <!-- method="post" 는 가끔 오류 가능성이 있다.-->
+    <form action="http://www.naver.com" method="get">
+        <table>
+            <caption>로그인</caption>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="uid" /></td>
+            </tr>
+            <tr>
+                <!-- 입력한 것이 **로 바뀐다 -->
+                <td>비밀번호</td>
+                <td><input type="password" name="upw" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- submit : 로그인버튼 생성 버튼 위에는 로그인 그려짐 / action으로 가란 의미-->
+                    <input type="submit" value="로그인" />
+                </td>
+            </tr>
+        </table>
+        <!-- https://www.naver.com/?uid=1234&upw=1234 아이디랑 비밀번호가 보여짐..-->
+        <!-- method의 get방식은 모든것이 노출되는 단점이 있다.-->
+        <!-- input 태그에는 꼭 name을 적어주어야 다음 페이로 입력한 정보가 넘어간다.-->
+
+    </form>
+
+
+
+</body>
+</html>

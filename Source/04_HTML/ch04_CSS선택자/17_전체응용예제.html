@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <style>
+        .left, .center, .right { 
+            border: 1px solid gray;
+            background-color: lightgray
+        }
+        .left, .right { width: 150px; }
+        .center { width: 693px; }
+
+        div#header {
+            width:1500px;
+            margin: 0 auto;
+            overflow:hidden;
+        }
+        div#header .left{
+            border-radius: 20px 0px 20px 0px;
+            float: left;
+            height: 150px;
+        }
+        div#header .center{
+           border-radius: 0px 0px 20px 20px;
+            height:150px;
+            float: left;
+        }
+        div#header .right{
+            border-radius: 0px 20px 0px 20px;
+            height:150px;
+            float: left;
+        }
+
+
+        div#content {
+            width: 1500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        div#content .left{   
+            height:300px;
+            float: left;
+            border-radius: 0px 20px 20px 0px;
+        }
+        div#content .center{
+            height:300px;
+            float: left;
+            border-radius: 20px;
+            text-align: center;
+        }
+        ul {
+            overflow: hidden;
+        }
+        ul li {
+            text-align: center;
+            float:left;
+            list-style: none;
+        }
+        ul li a {
+            text-align:center;
+            text-decoration:none;
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+            padding: 50px;
+        }
+        div#academy {
+            padding: 30px;
+        }
+        div#content .right{
+            height:300px;
+            float: left;
+            border-radius: 20px 0px 0px 20px;
+        }
+        #content .right ol li:nth-child(9)~li {
+            color: red;
+        }
+        
+
+        div#footer {
+            width: 1500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        div#footer .left{    
+            height:150px;
+            float:left;
+            border-radius: 0px 20px 0px 20px;
+        }
+        div#footer .center {
+            height: 150px;
+            float: left;
+            border-radius: 20px 20px 0px 0px;
+        }
+        div#footer .right{
+            height:150px;
+            float: left;
+            border-radius: 20px 0px 20px 0px;
+        }
+        
+
+
+
+    </style>
+
+</head>
+<body>
+    <div id="header">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+    <div id="content">
+        <div class="left"></div>
+        <div class="center">
+            <div id="nav">
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+            </ul>
+            </div>
+            <div id="academy">
+            <h3> 자바 개발자 양성과정 </h3>
+            <p>
+                무한한 그들에게 듣기만 속에 불어 바이며, 너의 희망의 그리하였는가? 우리의 위하여 수 이것이다. 같이, 이상의 귀는 곧 속에서 청춘의 뿐이다. 군영과 커다란 우리 사막이다. 수 방지하는 가치를 앞이 아니다. 없으면 그들의 새가 품으며, 있는 있으며, 뛰노는 것은 쓸쓸하랴?
+            </p>
+            </div>
+        </div>
+        <div class="right">
+            <ol>
+                <li> 태그 </li>
+                <li> 전체(*) </li>
+                <li> id, class </li>
+                <li> 속성 </li>
+                <li> 후손, 자손(>) </li>
+                <li> 동위 </li>
+                <li> 반응 </li>
+                <li> 상태 </li>
+                <li> 구조 </li>
+                <li> 문자 </li>
+                <li> 링크 </li>
+                <li> 부정 </li>
+            </ol>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        #header, #wrap, #footer{
+            width:600px;
+            margin:0 auto;
+            border: 1px solid gray;
+        }
+        #header{
+            overflow:hidden;
+        }
+        #header .logo { /*후손선택자 (아랫단 모두)*/
+            float:left;
+            padding: 10px 30px 10px 150px;
+        }
+        #header>.name { /* 자손선택자 (바로 아랫단)*/
+            float:left;
+            padding: 20px 30px 10px 70px;
+        }
+        div p{ /*후손선택자(div밑에 있는 p)*/
+            font-size: 20px; /* p태그의 기본 font-size: 16px */
+        }
+        div>p{ /*자손선택자(div 바로 밑에 있는 p) */
+               color:red;
+               font-size:16px;
+        }
+        #footer{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="header">
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+        <div class="name">
+            <h2> 00 주식회사 </h2>
+        </div>
+    </div>
+    <div id="wrap">
+        <p>
+            차가운 밤 밤공기를 마시며 가로등 불빛 아래 널 바래주다 조심스레 가까워진 손끝에 나도 모르게 멍하니 바라봤어 널 향한 내 맘 들킬까봐 바보처럼 굴었던 거야 난 이렇게 널 날 보던 눈빛 손짓마저도 조용한 말투 표정까지도 달콤해서 또 그렇게 널 집에 들어오는 걸음까지도 아쉬움에 자꾸 더 멈춰 돌아보게 해 I just wanna fall in In your eyes
+            Love you still forever in my mind 나도 몰래 덥석 손을 잡으면 놀라진 않을까하고 걱정 했는데 얼어붙은 내 모습 보면서 놀리듯 웃는 네가 더 예뻐 보여 이렇게 널 날 보던 눈빛 손짓마저도 조용한 말투 표정까지도 달콤해서 또 그렇게 널 집에 들어오는 걸음까지도 아쉬움에 자꾸 더 멈춰 돌아보게 해 I just wanna fall in In your eyes
+            Oh I Love you still forever in my mind 그렇게 널 바라보는 눈빛 손짓마저도 어색한 말투 표정까지도 소중해서 또 이렇게 널 모든 순간 소중한 날들로 사랑을 알게 해준 너여서 난 고마워
+        </p>
+        <ul>
+            <li><p> 모든 순간 소중한 날들로 사랑을 알게 해준 너여서 난 고마워</p></li>
+            <li><p> 모든 순간 소중한 날들로 사랑을 알게 해준 너여서 난 고마워</p></li>
+            <li><p> 모든 순간 소중한 날들로 사랑을 알게 해준 너여서 난 고마워</p></li>
+        </ul>
+    </div>
+    <div id="footer">
+        <p> 서울시 가남구 여사동 좋은빌딩 402호</p>
+    </div>
+
+</body>
+</html>

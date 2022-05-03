@@ -15,6 +15,7 @@ public class Ex05_SimpleDateFormant {
 		
 		System.out.println(now1);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 E요일 a hh시 mm분 ss초");
+		// 날짜형 데이터를 내가 원하는 format으로 출력해주는 것
 		/* yyyy(년도4자리) yy(년도2자리) M(3) MM(03) d(9) dd(09)
 		 * E(요일) a(오전/오후) H(24시간) h(12시간) m(분) s(초)
 		 * w(이번년도에 몇번째 주인ㄴ지) D(올해몇번째날인지)

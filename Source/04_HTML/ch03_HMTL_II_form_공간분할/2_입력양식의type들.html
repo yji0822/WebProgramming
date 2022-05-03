@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <style>
+        td{
+            text-align:center;
+            padding:2px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form action="#" method="get">
+        <!-- get : 256글자까지만 입력이 가능 -->
+        <!-- post : 긴글자를 읽어서 넘기려면 post -->
+        <table>
+            <tr> <!--1행-->
+                <td> 아이디 </td> <!--1열-->
+                <td>
+                    <!-- size="5": 5글자 정도 입력 가능한 텍스트 박스 생성 -->
+                    <input type="text" name="id" size="9" />
+                    <input type="button" value="중복확인" onclick="alert('중복확인 test');" />
+                </td> <!--2열-->
+            </tr>
+            
+            <tr>
+                <td> 비밀번호 </td>
+                <td>
+                    <input type="text" name="password" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td> 전화번호 </td>
+                <td>
+                    <input type="tel" name="phon1" size="1" /> -
+                    <input type="tel" name="phon2" size="1" /> -
+                    <input type="tel" name="phon3" size="1" />
+                </td>
+                    <!-- type="number" : 지수형으로도 표현 가능하다. 
+                        type="tel로 사용해야 숫자로만 입력 가능 "-->
+            </tr>
+            
+            <tr>
+                <td> 경력 </td>
+                <td>
+                    <!-- 유효성 검사는 태그 안에서나 자바스크립트에서도 가능하다. -->
+                    <!-- 칸을 들어가면 숫자를 입력해도 되고, 위아래 버튼으로 선택도 가능하다-->
+                    <input type="number" name="career" min="0" max="50" />
+                </td>
+            </tr>
+            
+            <tr>
+                <!-- 이메일 형식에 맞지 않으면 오류메세지를 출력해준다.-->
+                <td> 이메일 </td>
+                <td> <input type="email" name="email" /> </td>
+            </tr>
+            
+            <tr>
+                <td> 사진 </td>
+                <td> <input type="file" name="filename" /> </td>
+                <!--정렬은 CSS에서 해줘야 한다. -->
+            </tr>
+            
+            <tr>
+                <td> 성별 </td>
+                <td>
+                    <!-- 주의사항!! radio버튼은 선택하는 파라미터 이름(name)이 동일해야한다. -->
+                    <input type="radio" name="gender" value="m" checked /> 남
+                    <input type="radio" name="gender" value="w" /> 여
+                    <!-- checked 를 사용하면 default로 체크되어있다. 
+                       checked를 해놓으면 체크된 것이 지워지지 않는다. -->
+                </td>
+            </tr>
+
+            <tr>
+                <td> 사용언어 </td>
+                <td>
+                    <input type="checkbox" name="lang" value="kor" checked/> 한국어
+                    <input type="checkbox" name="lang" value="eng" /> 영어
+                    <input type="checkbox" name="lang" value="fra" /> 불어
+                    <input type="checkbox" name="lang" value="ind" /> 인도어
+                </td>
+            </tr>
+
+            <tr>
+                <td> 국적 </td>
+                <td>
+                    <!-- java 콤보박스와 같은 역할-->
+                    <select name="nation">
+                        <option> 대한민국 </option>
+                        <option value="usa"> 미합중국 </option>
+                        <!-- <option value="usa"> 미합중국 </option>
+                            option에 value를 생략하면 value=대한민국 으로 자동으로 들어간다. -->
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td> 좋아하는 음식 </td>>
+                <td>
+                    <!-- 화면에 3개만 표시되고 화살표로 선택 가능 -->
+                    <select name="food" multiple="multiple" size="3">
+                        <option>김치찌개</option>
+                        <option>된장찌개</option>
+                        <option>섞어찌개</option>
+                        <option>부대찌개</option>
+                        <option>닭볶음탕</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <!-- 입력하기 전에 공란으로 안놔두고 행복한 금요일이라고 출력되어 보이게 해줌 -->
+                <td> 자기소개 </td>
+                <td> <textarea name="intro" cols="25" rows="3"> 행복한 금요일~ </textarea> </td>
+            </tr>
+
+            <tr>
+                <td> 생년월일 </td>
+                <td>
+                    <input type="date" name="birth" />
+                </td>
+            </tr>
+
+            <!-- 잘 안쓰이는 것들 -->
+            <tr>
+                <td> 좋아하는 색상 <br /> 좋아하는 정도 </td>
+                <td>
+                    <input type="color" name="color" />
+                    0 <input type="range" name="range" min="0" max="100" step="10" /> 100
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="회원가입"/>
+                    <input type="reset" value="초기화" />
+                </td>
+            </tr>
+            
+
+        </table>
+
+    </form>
+
+</body>
+</html>

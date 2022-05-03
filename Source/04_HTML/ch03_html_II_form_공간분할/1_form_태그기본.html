@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        table{
+            background-color: black;
+        }
+        td{
+            text-align:center;
+            padding: 2px;
+            background-color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    form 태그 밖의 input은 넘어가지 않습니다. : <input type="text" name="nickname" /> <br />
+    <br />
+    <form action="#" method="get">
+        <table>
+            <caption> 로그인 </caption>
+            <tr>
+                <td>아 이 디</td>
+                <td><input type="text" name="uid" /></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="upw" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="로그인" />
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+</body>
+</html>

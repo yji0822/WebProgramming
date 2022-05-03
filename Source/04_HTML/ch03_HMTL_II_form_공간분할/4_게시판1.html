@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        td{
+            border-top: 1px solid blue;
+            text-align: center;
+            padding: 5px;
+        }
+
+    </style>
+
+    <script>
+        // 유효성 검증은 Java Script
+        // form 안의 타이틀은 한글자 이상, name은 2글자 이상 입력했는지 여부 판단
+        // value = frm.title.value가 "" 이거나 frm.name.length=1 이면 에러메세지 submit 불가 
+        function chk() {
+            if (!frm.title.value) { /* ''나 "" 다 문자열로 인식한다*/
+                // 빈스트링("")은 false로 인식한다. 0은 false
+                // "  " 은 true로 인식한다. 
+                alert('제목을 꼭 입력하여 주세요.');
+                frm.title.focus(); /*frm.title.에 커서가 깜빡이게 focus가 가도록 한다.*/
+                return false; // false여야지 submit이 안들어간다. 
+            } else if (frm.name.value.length < 2) {
+                alert('작성자명은 2글자 이상 입력하세요.');
+                frm.name.focus();
+                return false;
+            }
+            return true; // 생략가능. 기본적으로 submit이 이루어짐.
+        } // 에러가 날 경우에는 무시하고 진행하게 된다.
+    </script>
+
+</head>
+<body>
+
+    <form name ="frm" onsubmit="return chk()">
+        <!-- 화면틀 먼저 만든 다음에 css로 스타일 정의, -->
+        <table>
+            <caption> <h2> 게시판 </h2></caption>
+            <tr>
+                <td> 제목 </td>
+                <td> <input type="text" name="title" size="30"/></td>
+                <!-- <input type="text" name="title" size="30" value="제목" /> -->
+            </tr>
+            <tr>
+                <td> 작성자 </td>
+                <td> <input type="text" name="name" size="30" /></td>
+            </tr>
+            <tr>
+                <td> 본문 </td>
+                <!-- input이 들어가지 않는 textarea 
+                    반드시 닫힘태그는 붙여서 만들어주기 => space값이 들어가게 된다 -->
+                <td> <textarea name="content" rows="5" cols="32"></textarea></td>
+            </tr>
+            <tr>
+                <td> 첨부파일 </td>
+                <td> <input type="file" name="filename" /></td>
+                <!-- 파일 복사하는 프로그램 사용 예정 -->
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="입력완료" />
+                    <input type="reset" value="입력취소" />    
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+
+
+</body>
+</html>

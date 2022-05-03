@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <style>
+        /* CSS 는 위>아래로 차례차례 적용됩니다. (순서 중요!) */
+        header, footer {
+            color:blue; /* 글씨색 */
+            border: 1px solid gray ; /* 테두리의 두께, 선 종류 (1px solid 회색 테두리) */
+            /* border는 범인 색출하는 용도로 많이 사용된다. */
+        }
+        h1 {
+            text-align:center; /* 글씨 가운데 정렬 */
+            border: 1px dashed red;  /* 1px 점선 빨간 테두리 */
+            margin: 0px; /* h1에 마진이 기본으로 있는 것을 0으로 다시 세팅 해주는 것 */
+        }
+        li, p {
+            color: red;
+            background-color: lightpink;
+            font-weight: bold; /* 글씨 두껍게 */
+        }
+        p {
+            color:chocolate; /* red로 적용되었던 색이 초코색으로 바뀐 것 확인 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> 00 주식회사 </h1>
+    </header>
+    <nav>
+        <ul>
+            <li> 회사소개 </li>
+            <li> 서비스 </li>
+            <li> 고객센터 </li>
+            <li> 공지사항 </li>
+        </ul>
+    </nav>
+    <section>
+        <p>
+            Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout. Lorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero. Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's not genuine, correct, or comprehensible Latin anymore. While lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.
+        </p>
+    </section>
+    <footer>
+        <p> address 서울시 강남구 강남대로94길 13 좋은빌딩 402호 </p>
+    </footer>
+
+
+</body>
+</html>

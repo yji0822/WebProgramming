@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        table {background-color : #000000; 
+               margin : 10px 0px; /* 밖여백 : 상,우,하,좌*/
+        }
+        tr    {background-color : #ffffff;}
+        td {
+            /* 위오른쪽아래왼쪽 따로따로 지정할 수 있다. (픽셀단위) */
+            padding: 5px 10px 4px 20px; /* 표 안쪽 여백 (안여백) */
+            padding: 10px; /*10px 10px 10px 10px; */
+            padding: 5px 10px; /* 5px 10px 5px 10px; */
+            text-align : center; /* 글씨 가운데 정렬 */
+        }
+    </style>
+
+</head>
+<body>
+
+    <table border="3">
+        <!-- 테이블은 안여백 밖여백이 없다.(자동탭기능없다.)
+            border를  설정해주면 겉 두께가 두꺼워진다.-->
+        <caption><h2> 표제목 </h2></caption>
+        <tr>
+            <td>1행1열</td>
+            <td>1행2열</td>
+            <td>1행3열</td>
+            <td>1행4열</td>
+        </tr>
+        <tr>
+            <td>2행1열</td>
+            <td>2행2열</td>
+            <td>2행3열</td>
+            <td>2행4열</td>
+        </tr>
+        <tr>
+            <td>3행1열</td>
+            <td>3행2열</td>
+            <td>3행3열</td>
+            <td>3행4열</td>
+        </tr>
+
+    </table>
+
+    <table>
+        <!-- 테이블은 안여백 밖여백이 없다.(자동탭기능없다.)
+            border를  설정해주면 겉 두께가 두꺼워진다.-->
+        <caption>표제목</caption>
+        <tr>
+            <td colspan="2">1행1열, 2열</td> <!-- colspan : 열병합-->
+            <td>1행3열</td>
+            <td>1행4열</td>
+        </tr>
+        <tr>
+            <td>2행1열</td>
+            <td>2행2열</td>
+            <td>2행3열</td>
+            <td rowspan="2"> 2, 3행 4열 </td>
+        </tr>
+        <tr>
+            <td>3행1열</td>
+            <td>3행2열</td>
+            <td>3행3열</td>
+            <!--<td>3행4열</td>-->
+        </tr>
+
+    </table>
+
+
+</body>
+</html>

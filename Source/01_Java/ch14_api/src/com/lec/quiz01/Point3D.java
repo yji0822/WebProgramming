@@ -21,7 +21,6 @@ public class Point3D implements Cloneable {
 		z = 0.0;
 	}
 	public Point3D(double x, double y, double z) {
-		super();
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -36,9 +35,9 @@ public class Point3D implements Cloneable {
 		public boolean equals(Object obj) {
 			if(obj != null & obj instanceof Point3D) {
 				Point3D tempObj = (Point3D)obj;
-				boolean xChk = x == tempObj.x;
-				boolean yChk = y == tempObj.y;
-				boolean zChk = z == tempObj.z;
+				boolean xChk = (x == tempObj.x);
+				boolean yChk = (y == tempObj.y);
+				boolean zChk = (z == tempObj.z);
 				return xChk && yChk && zChk;
 			} else {
 				return false;
@@ -70,10 +69,8 @@ public class Point3D implements Cloneable {
 	}
 	
 	
-	
-	
-	
-	
-	
 
 }
+	
+	
+	

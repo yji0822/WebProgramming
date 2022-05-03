@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <style>
+        /* css 속성자(4장) : span*/
+        span{
+            color       : #ff0000; /*R(2)G(2)B(2)*/
+            font-weight : bold;
+            /* css 속성(5장) : color, font-weight*/
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- h : h태그는 제목 태그입니다. 자동 개행  -->
+    <!-- id를 중복으로 만들어주면 안된다! -->
+    <h1 id="top"> h태그는 제목 태그입니다. 자동 개행! </h1>
+    <h2>h2태그도 제목 태그입니다.</h2>
+    <h3>h3태그도 제목 태그입니다.</h3>
+    <h4>h4태그도 제목태그 입니다.</h4>
+    <h5>h5태그도 제목 태그 입니다.</h5>
+    <h6>h6태그도 제목 태그 입니다.</h6>
+    <h7>사실... h7태그는 없습니다.</h7><br />
+    사실... h7태그는 없습니다.<br />
+    test
+    
+    <hello> <!-- 무시되어 화면에 나오지 않는다. -->
+    &lt;hello&gt; <!-- 해결방법 -->
+    
+    <p>
+        p태그는 단락 태그 입니다. p태그가 닫히면 <br/> 자동개행되고
+        다음 단락에서 약간 마진(밖여백)이 생깁니다.
+        단락이기 때문에 다음 
+    </p>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <p>
+        <a href="https://www.google.com" target="_blank">구글(새탭 생성)</a><br />
+        <a href="https://www.daum.net" target="_self">다음(현재창에서 이동)</a><br />
+        <a href="www.daum.net" target="_self">(프로토콜을 안쓰면 url로 인식 안 함)</a><br />
+        <a href="0.기본태그설명.html">어제소스(현재창에서 이동)</a><br />
+    </p>
+
+    <p>KOREA<i>이텔릭체</i></p>
+    <p>KOREA<b>진하게</b></p>
+    <p>KOREA<sup>윗첨자</sup></p>
+    <p>KOREA<sub>아랫첨자</sub></p>
+    <p>KOREA<ins>언더라인 like a태그</ins></p>
+    <p><del>정가 10,000원 밑줄 </del> 할인액 7000원(<span>30%</span>)</p>
+
+    <ruby>
+        大韓民國
+        <rt> 대한민국 </rt>
+        <!-- 위에 설명으로 나타내주기 위해서 잘 안쓰임-->
+    </ruby>
+
+    pre 태그 영역은 그대로
+    화면에 표현됩니다.
+
+    <pre>
+    pre 태그 영역은 그대로 화면에 표현됩니다.
+부등호부호는 예외! &lt;abc&gt;
+    </pre>
+
+    <p>
+        브라우저 내에 space를 많이 넣어도             한번만 인식됩니다.<br />
+        브라우저 내에 space를 넣고 싶으면 &nbsp; &nbsp; &nbsp; &nbsp; 이렇게 작성해줍니다.
+    </p>
+
+    <a href="#top"><span>맨 위로(h1=top)</span></a>
+
+</body>
+</html>
