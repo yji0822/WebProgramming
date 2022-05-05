@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <style>
+        div {
+            width:100px; 
+            height: 100px;
+            border: 1px solid black;
+            text-align:center;
+            font-weight: bold;
+        }
+        div:first-child {
+            background-color: palevioletred;
+            display: block;
+        }
+        div:nth-child(2){
+            background-color: forestgreen;
+            /* display 속성은 div태그 기본값을 가짐 */
+        }
+        div:nth-child(3){
+            background-color:steelblue;
+            display: inline;
+            margin:10px;
+        }
+        div:nth-child(4){
+            background-color:chocolate;
+            display:inline;
+        }
+        div:nth-child(5){
+            background-color: black; display:none;
+            /* ☆★ display: none ☆★ 
+                (안보이게. 공간도 안보임) - 화면에서 사라짐 
+                hover(마우스 올려놓으면 글자가 바뀌는 등) 
+            */
+        }
+        div:nth-child(6){
+            background-color:indianred;
+            display:inline-block;
+            /* height, 윗여백, 아랫여백 지정*/
+        }
+        div:nth-child(7) {
+            background-color:green;
+            display:inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 블록속성의 div 태그 -->
+    <div>content1</div><div>content2</div><div>content3</div>
+    <div>content4</div><div>content5</div><div>content6</div>
+    <div>content7</div><div>content8</div>
+
+</body>
+</html>

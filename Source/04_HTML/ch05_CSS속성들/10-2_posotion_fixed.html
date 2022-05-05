@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * { 
+            margin:0px; 
+            padding:0px;
+            font-weight:bold;
+        }
+        div {
+            width:100px;
+            height:100px;
+            opacity:70%; /*나중에 써준게 위로 올라온다. */
+            border: 1px solid black;
+        }
+        #div1 {
+            position:absolute; /* 절대좌표 x축과 y축을 직접 정해주어야 한다. */
+            left:0px; top:0px; /*지금 막 창을 띄웠을때의 위치에서 왼쪽에서 50, 위에서 50 되는 위치 출력 */
+            background-color:red;
+        }
+        #div2 {
+            position:fixed; /* 고정좌표 */
+            top:50px; left:50px;
+            background-color: forestgreen;
+            z-index:999; /* z-index를 큰 값으로 하면 위로 올라옴. */
+        }
+        #div3 {
+            position:absolute;
+            top:100px;
+            left:100px;
+            background-color:blue;
+        }
+        #div4 {
+            position:absolute;
+            top:200px;
+            left:200px;
+            width:200px;
+            height:200px;
+            background-color:greenyellow;
+            opacity:1;
+        }
+        #div5 {
+            /* 부모인 div4를 기준으로 좌표 설정 */
+            position:absolute;
+            top:50px;
+            left:50px;
+            background-color:darkgreen;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+    <div id="div4">div4
+        <div id="div5">div5</div>
+    </div>
+    <!-- div4 안에 div5-->
+</body>
+</html>
