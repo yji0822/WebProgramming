@@ -1,0 +1,199 @@
+﻿
+/** 초기화 **/
+@font-face {
+    font-family: 'Amarante-Regular';
+    src: url('0509_yahoo/Amarante-Regular.ttf');
+}
+*{
+    margin:0;
+    padding:0;
+    font-family:'Amarante-Regular', cursive;
+}
+li {
+    list-style:none;
+}
+a {
+    text-decoration:none;
+    color:black;
+}
+/*** 페이지 사이즈 설정 및 가운데 정렬***/
+#header, #content, #footer {
+    width:1000px;
+    margin: 0 auto;
+}
+
+/* header */
+/* header>header_nav*/
+#header>#header_nav {
+    overflow:hidden;
+    background-color:#2d1152;
+    height:25px;
+}
+
+#header>#header_nav>.gnb {
+    float:left;
+}
+#header>#header_nav>.gnb>ul>li {
+    float:left;
+    margin-left:15px;
+}
+#header #header_nav .gnb>ul>li>a {
+    color: white;
+    line-height:25px;
+}
+/* #header>#header_nav>.survivalFootball*/
+#header>#header_nav>.survivalFootball {
+    float:right;
+    margin-right: 10px;
+}
+#header>#header_nav>.survivalFootball>img {
+    width: 20px;
+    height: 20px;
+}
+#header>#header_nav>.survivalFootball>a {
+    color: white;
+}
+
+/** header>header_info**/
+#header_info {
+    overflow:hidden;
+    margin: 0 auto;
+}
+.logo, .search {
+    float: left;
+}
+.logo {
+    padding: 10px 10px 10px 50px;
+    margin-left:60px;
+}
+.logo>img {
+     width: 170px;
+    height: 56px;
+}
+.search {
+    margin: 20px 5px;
+}
+input[type='text'] {
+    width: 300px;
+    height: 35px;
+    border:2px solid #3488d9;
+}
+input[type='submit'] {
+    background: url('0509_yahoo/search_btn.png');
+    width:124px;
+    height:37px;
+    border:none;
+    outline:none;
+    color: white;
+}
+.service > ul {
+    overflow:hidden;
+    height: 56px;
+}
+.service>ul>li {
+    float:left;
+}
+.service > ul > li > a {
+    float:left;
+    padding: 10px;
+    line-height:56px;
+}
+/* content */
+#content {
+    overflow:hidden;
+}
+/** content>main_menu **/
+#content>#main_menu {
+    float:left;
+    width: 155px;
+}
+#content>#main_menu>ul>li {
+    text-align: center;
+    padding: 13px;
+}
+
+/** content > main **/
+#content>#main {
+    float:left;
+}
+#content>#main>.main_big_banner {
+    width: 600px;
+    height:300px;
+    margin:3px;
+    border: 1px solid black;
+}
+#content>#main>.main_slide_banner {
+    margin:3px;
+    width:600px;
+    height:150px;
+    border: 1px solid black;
+}
+#content>#main>main_submenu {
+    margin:3px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+#content >#main>.main_submenu>ul {
+    margin: 3px;
+    margin-left:5px;
+}
+#content>#main>.main_submenu>ul>li {
+    float:left;
+    background-color:#500095; 
+    height: 50px;
+    width: 16.6%;
+}
+#content >#main> .main_submenu>ul>li>a {
+    color:white;
+    margin-left: 25px;
+    line-height:50px;
+}
+
+#content>#main>.main_topic {
+    clear:both;
+    height: 100px;
+    margin:3px;
+    margin-top:3px;
+    border: 1px solid black;
+}
+
+/**content > main_banner**/
+#content>#main_banner {
+    float:left;
+}
+
+#main_banner > .hit_search_word {
+    height: 100px;
+    width: 200px; /***/
+    margin: 3px;
+    border: 1px solid black;
+}
+#main_banner > .ad1 {
+    height: 100px;
+    margin: 3px;
+    border: 1px solid black;
+}
+#main_banner > .ad2, .ad3, .ad4 {
+    height: 150px;
+    margin: 3px;
+    border: 1px solid black;
+}
+
+/* footer */
+#footer > ul {
+    overflow:hidden;
+}
+#footer > ul> li {
+    float:left;
+    height: 100px;
+    line-height:100px;
+}
+#footer > ul > li:nth-child(1) {
+    margin-left: 160px;
+}
+
+#footer > ul > li:nth-child(2) {
+    margin-left: 10px;
+    padding: 10px;
+}
