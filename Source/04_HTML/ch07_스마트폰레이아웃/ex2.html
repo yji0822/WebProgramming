@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=2.0"/>
+    <title></title>
+    <style>
+        /** 인터넷 폰트 설정 구간은 반드시 위에!*/
+        /*** 페이지 초기화 ***/
+        * {
+            padding:0;
+            margin:0;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        li {
+            list-style:none;
+        }
+        a {
+            text-decoration: none;
+        }
+        /********** header **********/
+        header {
+            background-color:#ea8f00;
+            height: 100px;
+        }
+        /********** header #logo_wrap **********/
+        header #logo_wrap {
+            height:50px;
+            line-height: 50px;
+            text-align:center;
+            position:relative; /* 길어져도 항상 그 자리에 뜨게 하기 위한 작업 1 */
+        }
+        header #logo_wrap img.menu {
+            position: absolute;
+            top:0; left:10px;
+        }
+        header #logo_wrap img.myinfo {
+            position:absolute;
+            top:0;
+            right: 10px;
+        }
+        header #logo_wrap a.logo {
+            color: white; /*#ffffff*/
+        }
+        /********** header #search **********/
+        header #search {
+
+        }
+        header #search input[type='text'] {
+            width:100%;
+            /* 돋보기가 있는 위치에 글씨가 넘어가지 않도록 해주어야 한다. */
+        }
+        /* 검색버튼은 position을 잡은 후에 위에 올려준다. */
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo_wrap">
+            <img src="imgEx2/menu.png" class="menu" alt="메뉴 아이콘"/>
+            <a href="ex2.html" class="logo"><h3>mobile logo</h3></a>
+            <img src="imgEx2/myinfo.png" class="myinfo" alt="내정보 아이콘"/>
+        </div>
+        <div id="search">
+            <form action="#">
+                <input type="text" name="query_word" />
+                <input type="submit" value="" /> <!-- 이미지로 입힐 것이기 때문에 아무것도 넣어주지 않는다.-->
+            </form>
+        </div>
+    </header>
+
+</body>
+</html>

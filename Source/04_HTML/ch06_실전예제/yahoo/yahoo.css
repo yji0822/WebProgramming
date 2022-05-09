@@ -143,6 +143,7 @@ input[type='submit'] {
     background-color:#500095; 
     height: 50px;
     width: 16.6%;
+    margin:0 auto;
 }
 #content >#main> .main_submenu>ul>li>a {
     color:white;

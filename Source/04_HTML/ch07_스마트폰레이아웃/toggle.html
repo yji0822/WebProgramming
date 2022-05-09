@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            width:300px;
+            height: 100px;
+            background-color:red;
+            color:white;
+            display:none;
+        }
+
+        /* 체크박스를 클릭했을 때만 div가 나타나도록 해주는 기능 */
+        input[type='checkbox']:checked ~ div {
+            /* check 되어 있는 경우에만 적용 */
+            display: block;
+        }
+
+        /* m이라는 id를 사라지게 해라! */
+        #m {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- toggle : 한번 띄우면 나타나고 한번 띄우면 나타나고 -->
+    <label for="name">이름</label>
+    <input type="text" name="name" id="name" /><br />
+    <!-- 이름을 눌러도 text박스에 focus가 가도록 -->
+    <input type="checkbox" name="gender" id="m" />
+    <input type="checkbox" name="gender" id="w" /><label for="w">여자</label>
+    <label for="m">남자</label>
+    <label for="m"><img src="imgEx1/menu.png" /></label>
+    <!-- label for='m' 으로 묶어놨기 때문에 남자나 버튼 아무거나 눌러도 체크가 눌리거나 해제 하거나 
+        띄어져 있거나 다른 태그들이 들어가도 동일 -->
+    <br /><br /><br />
+
+    <div> 토글에 의해 나타났다 사라졌다 할 부분 </div>
+
+
+</body>
+</html>
