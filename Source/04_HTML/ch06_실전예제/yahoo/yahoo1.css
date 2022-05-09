@@ -229,3 +229,22 @@ input[type='submit'] {
     height:200px;
     border:1px solid black;
 }
+
+/* footer */
+#footer {
+    width:1000px; 
+    height:100px; 
+    margin:0 auto 10px; 
+}
+#footer ul {
+    overflow:hidden;
+}
+#footer ul li{
+    float:left;
+}
+#footer ul li:first-child { 
+    margin:20px 50px 20px 150px;
+}
+#footer ul li:last-child { 
+    margin:15px 0;
+}
