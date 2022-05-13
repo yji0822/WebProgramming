@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- 피타고라스의 정리-->
+    <script>
+        // A가 만든 부분 - A가 만든 square()는 피타고라스 함수 내에서만 사용하기 때문에 
+        // 함수 안에 선언을 해주어야 한다. 충돌이 일어날 가능성이 크다
+        // 내부함수 : 함수 내에 선언된 함수
+        // 내부함수 사용 이유 ; 충돌을 피하기 위해
+        /* function square(x) {
+            return x * x; // 제곱
+        } */
+        function pythagoras(width, height) {
+            function square(x) {
+                return x * x; // 제곱
+            }
+            return Math.sqrt(square(width) + square(height));
+            // sqrt : 루트씌워주는 함수
+        }
+    </script>
+    <script>
+        // B가 만든 부분 : 밑변, 높이, 빗변을 매개변수로 받아 직각 삼각형이면 true, 아니면 false 리턴
+        function square(w, h, hypotenuse) {
+            if (w * w + h * h == hypotenuse * hypotenuse) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+    <script>
+        // 내가 구현 
+        document.write('높이가 4, 밑변이 3인 직각삼각형의 빗변은 ' + pythagoras(3, 4) + '<br>');
+        document.write('높이가 4, 밑변이 3, 빗변이 5이면 직각삼각형? ' + square(3, 4, 5) + '<br>')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

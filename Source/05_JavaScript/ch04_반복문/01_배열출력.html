@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var arr = [273, 32, '홍길동'];
+
+        document.write(arr + '<br>');
+        document.write('<h2> 1. 일반for문 이용한 배열 출력 </h2>');
+        for (var i = 0; i < arr.length; i++) {
+            document.write(i + '번째 : ' + arr[i] + '<br>');
+        }
+
+        document.write('<h2> 2. for-in문 이용한 배열 출력 </h2>'); // 잘 사용되지 않음 - 확장for문과 다름!
+        for (var idx in arr) {
+            // var 옆의 idx는 데이터 값이 아닌 인덱스의 값
+            document.write(idx + '번째 : ' + arr[idx] + '<br>');
+        }
+
+        document.write('<h2> ** 3. (index를 사용한) for-each 함수를 이용한 배열 출력 ** </h2>');
+        // 배열명 : arr
+        // 배열 안의 데이터(data) : 273, 32, '홍길동'
+        // 배열의 인덱스(idx) : 0, 1, 2
+        // 배열을 만들면 for-each라는 함수가 자동으로 만들어진다.
+
+        // 형식 : arr.forEach(fucntion (data, idx) {}); - 데이터를 받을 변수, 데이터를 넣을 인덱스값 
+        // - 매개변수 안에 함수를 집어넣어준다.ex) var i = function (); { alert(10); }
+
+        arr.forEach(function (data, idx) {
+            document.write(idx + '번째 : ' + data + '<br>');
+        });
+        // 변수 안에 함수 삽입 - callback 함수
+
+        document.write('<h2> 4. (index 없이) for-each 함수를 이용한 배열 출력 </h2>');
+        arr.forEach(function (data) {
+            document.write(data + '<br>');
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

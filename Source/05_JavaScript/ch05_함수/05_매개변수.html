@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        function pow(x, y) {
+            // x의 y제곱을 리턴하는 함수 : pow(4,2)
+            var result = 1;
+            for (var i = 1; i <= y; i++) {
+                // y번 수행되는 반복문
+                result *= x; // result = result * x;
+            }
+            return result; // return을 지울 시에 undefined로 값이 들어간다.
+        }
+
+        document.write('pow(4, 2) = ' + pow(4, 2) + '<br>'); // 4의 2제곱
+
+        // 선언한 매개변수의 개수보다 많으면 무시하고 실행한다.
+        document.write('pow(3, 2, 2) = ' + pow(3, 2, 2) + '<br>'); // 9 출력
+        document.write('pow(3, 2, "a", 3) = ' + pow(3, 2, 'a', 3) + '<br>'); // 9 출력
+
+        // 선언된 함수의 매개변수보다 적은 매개변수로 호출할 경우,
+        // y가 undefined로 정의 - for문은 false. 
+        // 1이 실행되는건 return에 1을 넣어놨기 때문에 1로 호출이 되는 것.
+        document.write('<br>');
+        document.write('함수의 매개변수 보다 적은 매개변수로 호출 <br>');
+        document.write('pow(4) = ' + pow(4) + '<br>');
+        document.write('pow() = ' + pow() + '<br>');
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

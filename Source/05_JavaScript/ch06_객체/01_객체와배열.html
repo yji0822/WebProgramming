@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var arr = ['홍길동', '김길동', 3];
+        // var arr = {0: '홍길동', 1:'김길동', 2:3}; 위의 배열을 이렇게 인식
+        var person = {
+            'name': '홍길동', // name을 속성명, 키(key)라고 불린다.
+            'age': '22'
+        };
+        alert(typeof (arr) + ', ' + typeof (person)); // object, object
+        // 자바스크립트는 array(배열)와 객체를 모두 객체 취급 한다.
+
+        document.write('arr[0] : ' + arr[0] + '<br>');
+        document.write('person[name] = ' + person['name'] + ', '
+                        + person.name + '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // startTime(st, 변수) = 현재 밀리세컨
+        /* 반복문 {
+         *  반복 횟수 ++ 
+         *  진짜 할 일 
+         *  현재 밀리세컨이 st + 1000이면 STOP
+         * }
+         */
+
+        var cnt = 0; // 반복횟수가 저장될 변수
+        var startTime = new Date().getTime(); // 현재 밀리세컨
+        while (new Date().getTime() <= startTime + 1000) {
+            // 현재 시간이 startTime보다 1초가 넘으면 안된다.
+            cnt++; // 횟수 체크 
+        }
+        document.write(cnt + '번');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+        border: 1px solid lightgray;
+
+        }
+        input {
+            text-align: center;
+        }
+        input [type='text'] {
+            padding: 10px;
+            height: 30px;
+            border: 1px solid gray;
+        }
+        input[type='submit']{
+            margin-left: 90px;
+            padding: 5px 20px;
+            background-color: gray;
+            border: 2px solid gray;
+        }
+    </style>
+
+    <script>
+
+        function chk() {
+            var first = Number(frm.num1.value);
+            var second = Number(frm.num2.value);
+
+            if (first == "" && second== "") {
+                alert("수를 입력하여 주세요.");
+            } else if (first > second) {
+                result = first - second;
+                //alert("첫번째 수가 " + result + "만큼 큽니다.");
+                msg = "<h3>첫번째 수가 " + result + "만큼 큽니다.</h3>";
+                document.body.innerHTML += msg;
+                msg1 = msg.substring(4);
+                msg1 = msg1.substring(0, msg1.indexOf('</h3>'));
+                alert(msg1);
+                frm.num1.value = first;
+                frm.num2.value = second;
+                
+                return false;
+
+            } else if (second > first) {
+                result = second - first;
+                //alert("두번째 수가" + result + "만큼 큽니다.");
+                msg = "<h3>두번째 수가 " + result + "만큼 큽니다.</h3>";
+                document.body.innerHTML += msg;
+                msg1 = msg.substring(4);
+                msg1 = msg1.substring(0, msg1.indexOf('</h3>'));
+                alert(msg1);
+                frm.num1.value = first;
+                frm.num2.value = second;
+                return false;
+
+            } else if (first == second) {
+                // alert("첫번째 수와 두번째 수가 같습니다.");
+                msg = "<h3>첫번째 수와 두번째 수가 같습니다.</h3>";
+                document.body.innerHTML += msg;
+                msg1 = msg.substring(4);
+                msg1 = msg1.substring(0, msg1.indexOf('</h3>'));
+                alert(msg1);
+                frm.num1.value = first;
+                frm.num2.value = second;
+                return false;
+            }
+            return true;
+        }
+
+        /*
+        var msg = "<h3> 두번째 수가 10만큼 큽니다. </h3>";
+        document.body.innerHTML += msg;
+        msg1 = msg.substring(4);
+        msg1 = msg1.substring(0, msg1.indexOf('</h3>')); // 15출력
+        //lastindexof 함수로 마지막 꺽새 부분을 찾아내주는 것 (or Indexof)
+        alert(msg1);
+        */
+    </script>
+
+</head>
+<body>
+    <form name="frm" onsubmit="return chk()">
+        <table>
+            <tr>
+                <td><a>첫번째수</a></td>
+                <td><input type="text" name="num1" /></td>
+            </tr>
+
+            <tr>
+                <td><a>두번째수</a></td>
+                <td><input type="text" name="num2" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="결과" name="result" />
+                </td>
+            </tr>
+        </table>
+        
+    </form>
+
+</body>
+</html>

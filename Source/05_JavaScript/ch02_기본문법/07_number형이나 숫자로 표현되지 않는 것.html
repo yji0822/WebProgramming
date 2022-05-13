@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // NaN (타입은 number)
+        i = Number("a");
+        document.write('i = ' + i + '<br>'); // NaN
+        document.write('i가 NaN인지 : ' + isNaN(i) + '<br><br>'); // true
+
+        // Infinity (타입은 number)
+        i = 10 / 0; // 10 / 0.0000000000000000000000000000000000000000000001;
+        document.write('i = ' + i + '<br>'); // Infinity
+        document.write('i가 유한수인지 : ' + isFinite(i) + '<br><br>'); // false
+
+        i = 'hello' + 10;
+        document.write('i = ' + i + '<br>'); 
+    </script>
+</head>
+<body>
+
+</body>
+</html>

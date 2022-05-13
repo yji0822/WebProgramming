@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // 사용자로부터 학점을 입력 받아 해당되는 학점 메세지 출력
+        // 4.1 4.2 4.3 4.4 -> 한 case로 묶기 위해서. Math.trunc(학점/0.5) 
+        // 98, 99, 91 -> 한 case로 묶기 위해서 Math.trunc(점수/10) - 무조건 내림으로 해준 후에 한 case로 묶기
+        // Math.trunc(점수/10);
+        var hakjum; // undefined
+        while (isNaN(hakjum) || hakjum <= 0 || hakjum > 4.5) {
+            hakjum = Number(prompt("0~4.5의 학점을 입력하세요")); // NaN이면 안된다.
+        }
+        switch (Math.trunc(hakjum / 0.5)) {
+            case 9: case 8:
+                document.write("A학점");
+                break;
+            case 7: case 6:
+                document.write("B학점");
+                break;
+            case 5: case 4:
+                document.write("C학점");
+                break;
+            default:
+                document.write("분발하세요");
+        }
+
+        //if (4.0 <= hakjum && hakjum <= 4.5) {
+        //    document.write("a학점");
+        //}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

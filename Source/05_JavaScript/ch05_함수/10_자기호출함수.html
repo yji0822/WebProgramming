@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <script>
+        // 다른 개발자의 로직에 영향을 주지 않기 위해 >> 내부함수, 자기호출함수
+
+        (function () {
+            alert('자기호출함수 11');
+        })();
+        // 내가 함수를 만들고 바로 호출. 자주 사용되지는 않는다.
+        // ( function() {alert('자기호출함수');} ) ();
+
+        var fun = function () {
+            alert('자기호출함수 22');
+        };
+        fun();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

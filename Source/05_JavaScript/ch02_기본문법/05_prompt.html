@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        scoreStr = prompt('점수를 입력하세요 : ', '0~100점 사이');
+        // 텍스트 상자에 '0~100점 사이' 가 들어가져 있다.
+        // document.write(scoreStr); // 취소버튼을 누르면 null이 들어간다 
+        if (scoreStr == null) {
+            alert('점수를 입력하세요');
+        } else {
+            // document.write(scoreStr + '의 타입은 ' + typeof (scoreStr));
+            // Java : Integer.parseInt("");와 비슷. - 차이점: 자바는 빈스트링이 들어가면 에러
+            // JS : 빈스트링이 들어가도 에러X - 0이 출력된다.
+            // 문자를 입력하면 NaN(Not a Number) 출력. 타입은 number로 찍힌다 
+            // document.write(score + '의 타입은 ' + typeof (score));
+
+            score = Number(scoreStr); // Number("");
+            document.write(score + '<br>');
+
+            if (isNaN(score)) { // score가 NaN이라면 true return
+                alert('점수를 입력하세요');
+            } else {
+                result = score > 70 ? "Very Good" : "Good..";
+            }
+            document.write(result);
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

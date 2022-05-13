@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // 출력 : 일반for, for-in문, forEach()함수 이용
+        var arr = [1, 2, 300];
+
+        for (var idx in arr) {
+            document.write(idx + " : " + arr[idx] + '<br>');
+        }
+        
+
+        // 출력 : for-in문만 이용
+        var obj = {
+            'name': '홍길동',
+            'age': 20,
+            // 'eat': function () {}
+        };
+        for (var key in obj) {
+            document.write(key + " : " + obj[key] + '<br>');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

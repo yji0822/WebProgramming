@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="02.js"></script> 
+    <!-- js 파일 반드시 메모장에서 인코딩 형식 바꾸기 -->
+    
+    <script>
+        // funVar('홍길동'); 익명함수가 호출시점보다 밑에 있으면 에러
+        // 아래 주석부분 js 파일로 분리
+        //var funVar = function (i) {
+        //    alert(i + '값을 매개변수로 받은 익명함수 호출됨');
+        //}; // 자바와 달리 변수의 타입이 필요없다.
+        funVar();
+        funVar(10);
+        funVar([12, 13]); // 배열을 넣어도 됨
+
+        var param = prompt('매개변수로 넣을 값은?');
+        funVar(param);
+
+        funVar(true); // boolean 타입
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

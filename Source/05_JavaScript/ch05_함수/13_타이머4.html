@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        // 방법3 - 자기호출함수
+        for (var i = 0; i < 3; i++) {
+            var fun = function (j) {
+                setTimeout(function () { alert(j); }, 0);
+            };
+            fun(i);
+            // fun(0) - alert(0)을 0초 후에 출력
+            // fun(1) - alert(1)을 0초 후에 출력
+            // fun(1) - alert(2)을 0초 후에 출력
+        }
+
+        // 방법2
+        [0, 1, 2].forEach(function(data, idx){
+            setTimeout(function(){
+            alert(data);
+                // data=0일 때, alert(data)- 0초 후 타이머
+                // data=1일 때, alert(data)- 0초 후 타이머
+                // data=2일 때, alert(data)- 0초 후 타이머
+        }, 0);
+        });
+
+        // 방법1
+        // 경고창 뜨는 순서 : 3-3-3
+        // for문이 다 돈 후에 setTimeout함수가 실행되기 때문에 3만 3번 뜨게 된다.
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function () { alert(i); }, 0);
+            // i가 0일때, alert(i) - 0초 후 타이머 
+            // i가 1일때, alert(i) - 0초 후 타이머 
+            // i가 2일때, alert(i) - 0초 후 타이머
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

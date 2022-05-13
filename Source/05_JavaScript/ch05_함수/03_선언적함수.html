@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        // 익명함수 - 반드시 선언하고 아래에서만 호출 가능 
+        //var fun = function () {
+        //    alert('함수A'); // 익명함수
+        //    fun();
+        //}; - 변수에 할당된 것이니까 변수의 세미콜론
+
+        // 선언적 함수 : 함수의 이름이 있다.
+        // - 선언을 해놓기만 하면 위치에 상관없이 어디서든 호출 가능
+        // - 선언이 실행 시 가장 우선순위이기 때문
+        // - 매개변수 있어도 되고 없어도 되고. 있다면 매개변수 있는 함수 호출, 실행
+        fun();
+        function fun() {
+            alert('함수A');
+        } // 함수이기 때문에 세미콜론 없어도 가능
+    </script>
+</head>
+<body>
+
+</body>
+</html>
