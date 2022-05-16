@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        form {
+            border: 1px solid blue;
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+            border: 2px solid navy;
+            padding: 5px;
+        }
+
+        input[type='submit'],
+        input[type='reset'] {
+            background-color: #385d81;
+            border: 1px solid navy;
+            border-radius: 5px;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+    <!-- *** 정규표현식 ***
+            정규표현식 연습장을 통해 만들어진 정규표현식 test
+                (https://www.regexr.com)
+                    전화번호, 이메일, 카드번호 등에 많이 사용된다
+                [0 - 9] : 0부터 9 사이 중 하나(숫자 하나를 의미)
+                [a - zA - z] : 알파벳 중 한글자
+                [가 - 힣] : 한글 중 한글자
+                [가 - 힣ㄱ - ㅎㅏ - ㅣ] : 한글, 자음, 모음 중 한글자
+                { n } : n번 반복
+                { n, m } : 최소 n번, 최대 m번 반복(0 < n <= m)
+                    \d : 숫자[0 - 9]와 동일
+                    \w : 문자(숫자와 알파벳) 중 한 문자
+                + : 1번 이상 반복
+                * : 0번 이상 반복
+                    . : '\n' 을 제외한 임의의 한 문자 자리수(스페이스 포함)
+                    \. : .문자
+            -->
+    <script>
+        //var str = 'abcd@ef가1';
+        var patternNum = /[0-9]/; // 숫자 패턴
+        var patternEng = /[a-zA-Z]/; // 알파벳 문자 패턴
+        var patternKor = /[가-힣ㄱ-ㅎㅏ-ㅣ]/; // 한글 문자 패턴
+        var patternSpc = /[~!@#$%^&*()_+|<>?:;{}\\\[\]?<>]/; //특수문자패턴 [ >> \[ , ] >> \], \ >> \
+
+        var patternName = /[~!@#$%^&*()_+|<>?:;{}\\\[\]?<>0-9a-zA-Z]/;
+        var patternMail = /[a-zA-Z0-9][a-zA-Z0-9_.]+@[a-zA-z]\w+(\.[a-z]+){1,2}/; 
+
+        function chk() {
+            if (frm.name.value.length < 2 || patternName.test(frm.name.value)) {
+                alert('입력하신 이름을 확인하여 주세요.');
+                frm.name.value = '';
+                frm.name.focus();
+                return false;
+            } else if (!patternMail.test(frm.mail.value)) {
+                alert('메일주소를 다시 확인해주세요!');
+                frm.mail.focus();
+                return false;
+            } else if (frm.pw.value.length < 4 || !patternEng.test(frm.pw.value)
+                || !patternNum.test(frm.pw.value) || !patternSpc.test(frm.pw.value)) {
+                alert('비밀번호는 영어와 숫자, 특수문자를 섞어서 4글자 이상으로 적어주세요.');
+                frm.pw.focus();
+                return false;
+            } else if (frm.pw.value != frm.pwchk.value) {
+                alert('두 비밀번호를 확인하세요');
+                frm.pw.value = '';
+                frm.pwChk.value = '';
+                frm.pw.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="frm" onsubmit="chk()">
+
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="name" placeholder="이름엔 특수문자가 못 와" /></td>
+            </tr>
+            <tr>
+                <td>메일</td>
+                <td><input type="email" name="mail" placeholder="메일형식에 맞추세요"/></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="pw" /></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="pwchk" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="회원가입" />
+                    <input type="reset" value="취소" />
+                    <input type="submit" value="로그인" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

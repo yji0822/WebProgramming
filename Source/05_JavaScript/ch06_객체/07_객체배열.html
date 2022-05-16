@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var students = [{ name: '홍길동', kor: 99, mat: 90, eng: 98, sci: 100 },
+            { name: '홍길동', kor: 99, mat: 90, eng: 98, sci: 100 }];
+
+        // 언제든지 추가가 가능
+        students.push({ name: '홍길동', kor: 99, mat: 90, eng: 98, sci: 100 });
+        students.push({ name: '신길동', kor: 80, mat: 91, eng: 98, sci: 88 });
+        students.push({ name: '마길동', kor: 91, mat: 95, eng: 100, sci: 18 });
+
+        // students[0~4].getSum = function () { return 국 + 영 + 수 + 과 }; - for문으로 돌리기
+        for (var idx in students) {
+            // 0부터 4까지 돌아가는 idx. 세미콜론 필수
+            students[idx].getSum = function () {
+                return this.kor + this.mat + this.eng + this.sci;
+            };
+            students[idx].getAvg = function () {
+                return this.getSum() / 4; // 소수점 유지
+            };
+            students[idx].toString = function () {
+                var output = '';
+                for (var key in this) {
+                    if (key != 'getSum' && key != 'getAvg' && key != 'toString') {
+                        output += key + ' : ' + this[key] + '<br>';
+                    } else if (key == 'getSum' || key == 'getAvg') {
+                        output += key.substring(3).toUpperCase() + ' : ' + this[key]() + '<br>';
+                    } // if-else if
+                } // for
+                return output;
+            }; // toString
+        } // for(var idx in students)
+
+        // alert는 'Wn'이기 때문에 toString에서 '<br>'로 받은 것을 바꿔주어야 한다.
+        // 1. students 배열 출력 : 일반 for문
+        document.write('<br>' + '1. students 배열 출력 : 일반 for문' + '<br>');
+        var output = '';
+        for (var idx = 0; idx < students.length; idx++) {
+            output += idx + '번째 ' + '<br>';
+            output += students[idx];
+        }
+        document.write(output);
+        alert(output.replaceAll(output, '<br>', '\n'));
+        // alert(output.replaceAll('<br>', '\n'));
+
+        //
+        str = 'aaaa<br>bbbb<br>cccc';
+        splitStr = ['aaaa', 'bbbb', 'cccc'];
+        joinStr = 'aaaaaaa\nbbbbbbbb\nccccccc';
+
+        // str 내의 oldStr을 newStr로 모두 교체
+        function replaceAll(str, oldStr, newStr) {
+            var splitStr = str.split(oldStr);
+            var joinStr = splitStr.join(newStr);
+            return joinStr;
+            // return str.split(oldStr), join(newStr);
+        }
+
+        // 2. students 배열 출력 : for-in문 
+        document.write('<br>' + ' 2. students 배열 출력 : for-in문 ' + '<br>');
+        var output = '';
+        for (var idx in students) {
+            output += idx + '번째 ' + '<br>';
+            output += students[idx];
+        }
+        document.write(output);
+
+
+        // 3. students 배열 출력 : forEach()함수 이용 **많이 사용하는 함수
+        // 배열에 기본적으로 생기는 함수
+        document.write('<br>' + '3. students 배열 출력 : forEach()함수' + '<br>');
+        students.forEach(function (data, idx) {
+            document.write(idx + '번째<br>');
+            document.write(data + '<hr>');
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>                                                                                                  
