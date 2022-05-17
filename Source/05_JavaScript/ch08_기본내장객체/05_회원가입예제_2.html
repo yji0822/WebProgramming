@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -70,22 +71,22 @@
                 alert('메일은 필수 입력사항입니다');
                 frm.name.focus();
                 return false;
-            } else if (!patternMail.test(mail)) { // 이메일 형식인지 검사
+            } else if (!patternMail.test(mail)) { // 이메일 형식을 포함하고 있는지 검사
                 alert('1.메일 형식을 확인하세요');
                 frm.mail.focus();
                 return false;
-            } /*else if (!mail.match(patternMail)) {// 이메일 형식을 배열로 반환/정규표현식과 맞는 text가 없으면 null 반환
-            alert('2.메일 형식을 확인하세요');
-            frm.mail.focus();
-            return false;
-          } else if (mail.indexOf('@') == -1 || // @가 없음
+            } else if (!mail.match(patternMail)) {// 이메일 형식을 배열로 반환
+                alert('2.메일 형식을 확인하세요');
+                frm.mail.focus();
+                return false;
+            } /*else if (mail.indexOf('@') == -1 || // @가 없음
             mail.indexOf('@') == 0 || // @가 맨앞
             mail.lastIndexOf('@') == mail.length - 1 || // @가 맨뒤
             mail.indexOf('@') != mail.lastIndexOf('@') ||
             mail.indexOf('@') > mail.indexOf('.')) { //!patternMail.match(mail)
-              alert('3. 메일 형식을 확인하세요');
-              frm.mail.focus();
-              return false;
+            alert('메일 형식을 확인하세요');
+            frm.mail.focus();
+            return false;
           }*/else if (!pw) {
                 alert('비밀번호를 입력하세요');
                 frm.pw.focus();

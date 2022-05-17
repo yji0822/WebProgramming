@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      div {
+          border: 1px solid black;
+          width: 300px;
+          margin:0 auto;
+          text-align: center;
+      }
+    </style>
+    <script>
+        function goHomepage(num) {
+            url = ['https://www.naver.com', 'https://www.daum.net',
+                'https://www.google.com', 'https://www.youtube.co.kr'];
+            location.href = url[num];
+        }
+        
+    </script>
+</head>
+<body>
+    <div>
+        <h3>메뉴</h3>
+        <p>
+            <button onclick="goHomepage(0)">네이버</button>
+            <button onclick="goHomepage(1)">다음</button>
+            <button onclick="goHomepage(2)">구글</button>
+            <button onclick="goHomepage(3)">유튜브</button>
+        </p>
+    </div>
+</body>
+</html>

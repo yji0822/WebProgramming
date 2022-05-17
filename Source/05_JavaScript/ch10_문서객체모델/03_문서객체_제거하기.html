@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function append() {
+            // 01_문서객체생성.html 3번방법
+            document.body.innerHTML += '<h1>HEADER</h1>';
+        }
+        function remove() {
+            var h = document.getElementsByTagName('h1');
+            document.body.removeChild(h[0]); // 첫번째 h1
+        }
+    </script>
+</head>
+<body>
+    <!-- 클릭하면 remove라는 함수 실행하기-->
+    <button onclick="remove()">h1태그 제거하기</button>
+    <button onclick="append()">h1태그 추가하기</button>
+    
+    <h1>HEADER</h1>
+</body>
+</html>

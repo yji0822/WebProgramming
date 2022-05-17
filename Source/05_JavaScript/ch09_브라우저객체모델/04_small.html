@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var child;
+
+        // 새창 여는 로직 (04_big.html)
+        function openBig() {
+            child = open('04_big.html', '', 'width=650, height=750'); // 0,0에 놓으면 팝업창이 실행됐다가 사라졌다 반복
+            if (!child) {
+                // 팝업창이 안뜬다면
+                alert('팝업 차단을 해제 해주세요.');
+            }
+        }
+
+        // 방금 연 새창이 있다면 닫는 로직
+        function closeBig() {
+            child.close(); // window.close() : 현재창 닫기
+        }
+    </script>
+</head>
+<body>
+    <h3>작은 그림의 PARENT 창</h3>
+    <img src="img/small.jpg" alt="작은그림" 
+         onmouseover="openBig()"
+         onmouseout="closeBig()"/>
+    <!-- 그림에 마우스를 올려넣으면(onmounseover 큰 그림이 보이게 하고
+        마우스를 떨어트려놓으면 사라지게 하는(onmouseout) 로직 -->
+</body>
+</html>

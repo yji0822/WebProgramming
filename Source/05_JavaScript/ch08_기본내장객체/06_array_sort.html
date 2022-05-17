@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //생성자함수 Array
+
+        var arr1 = new Array('big', 'abc', 'zyx'); // = ['big', 'abc', 'zyx']
+        var arr2 = [52, 103, 273, 32, 57];
+
+        document.write('arr1 정렬 전 : ' + arr1 + '<br>'); //big,abc,zyx
+
+        // sort정렬. 정렬기준은 아스키코드 순으로 정렬된다.
+        arr1.sort(); 
+        document.write('arr1 정렬 후 : ' + arr1 + '<br>'); //abc,big,zyx
+
+        document.write('arr2 정렬 전 : ' + arr2 + '<br>'); //52,103,273,32,57
+
+        arr2.sort(); // 우리가 원하는 값으로 정렬이 되지 않는다.
+        document.write('arr2 정렬 후 : ' + arr2 + '<br>'); //103,273,32,52,57
+
+        // 콜백함수를 sort()안에 넣어서 정렬을 진행한다.
+        // 콜백함수에는 반드시 매개변수가 있어야 한다.
+        arr2.sort(function (left, right) {
+            return left - right; // 오름차순 정렬 (left-right : 정렬한다는 의미)
+            // 내림차순 정렬
+            // return right-left;
+        });
+
+        document.write('arr2 정렬 후2 : ' + arr2 + '<br>');
+
+        arr2.reverse(); // 배열 요소의 순서를 뒤집는 함수 (문자, 숫자 모두 가능)
+        document.write('arr2 요소순서 뒤집은 후(reverse - 내림차순) : ' + arr2 + '<br>');
+
+        var sliceArr2 = arr2.slice(0, 3); // 0번째부터 3번째 앞까지만 출력
+        document.write('arr2 top3 : ' + sliceArr2);
+
+    </script>
+    <script>
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

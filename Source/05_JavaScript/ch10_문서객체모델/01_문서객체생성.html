@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // window.onload = null; // onload될때 아무런 이벤트도 하지 않는다
+        window.onload = function () {
+            // 방법1) 1. h1태그 생성 > 2. 태그 들어갈 textNode 생성 
+            //      > 3. h1태그와 textNode 연결 > 4. 내가 만든 h1태그를 body에 추가
+            var h1 = document.createElement('h1'); // h1태그 생성(createElement)
+            var textNode = document.createTextNode('추가한 h태그 안 text'); // textnode 생성
+            h1.appendChild(textNode); // h1태그 안에 textnode추가 (h1태그에 textnode추가)
+            document.body.appendChild(h1); // body에 추가
+
+            // 방법2) 1. img태그 생성 / 2. src속성 setting / 3.img태그를 body에 추가
+            var img = document.createElement('img');
+            img.setAttribute('src', 'img/red.jpg'); // 이미지에 src 속성 setting
+            document.body.appendChild(img);
+
+            // 방법3) innerHTML을 이용
+            document.body.innerHTML += '<h1>방법3으로 추가</h1>';
+
+        };
+    </script>
+</head>
+<body>
+    <h1>Text Node</h1>
+    <img src="img/orange.jpg" />
+
+    <!-- 기존에 없는 src노드 생성해놓기-->
+    <img src="" />
+</body>
+</html>

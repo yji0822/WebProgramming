@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // 생성자를 이용한
+        function Student(name, kor, mat) {
+            this.name = name;
+            this.kor  = kor;
+            this.mat  = mat;
+        }
+        // 공통내용을 프로토타입으로 지정해서 빼놓기 (메소드로!)
+        Student.prototype.getSum = function () {
+            return this.kor + this.mat;
+        };
+        Student.prototype.getAvg = function () {
+            return this.getSum() / 2;
+        };
+        Student.prototype.toString = function () {
+            return this.name + ' (' + this.kor + ', ' + this.mat
+                + ' / 총점 : ' + this.getSum() + ', 평균 : ' + this.getAvg() + ')';
+        };
+
+        // 객체만들기 - 객체배열로!
+        // 총점 기준으로 sort하기
+        // 낮은거 >> 높은 점수로 sort
+        var students = [new Student('홍길동', 99, 98), new Student('김길동', 89, 100),
+                        new Student('신길동', 80, 90), new Student('황길동', 23, 55),
+                        new Student('박길동', 100, 100)];
+
+        //출력만 하는 용도는 forEach함수 사용하기
+        document.write('<h3>정렬 전 원데이터 출력</h3>');
+        students.forEach(function (data, idx) {
+            document.write(idx + ' : ' + data + '<br>');
+        });
+
+        // 정렬진행 - 총점 기준으로 오름차순 정렬
+        // students.sort(); 객체에 아스키코드가 있는 것이 아니라 반드시 callback함수 사용
+        students.sort(function (left, right) {
+            return left.getSum() - right.getSum(); // 총점을 기준으로 오름차순 진행
+        }); // left도 객체, right도 객체
+
+        // 원 데이터를 보고 싶다면 변수를 받아서 정렬 전 데이터를 저장한다.
+        // 대부분의 경우는 정렬 전 데이터가 필요하지 않다고 한다.
+        originStudents = students;
+
+        // 정렬 후 데이터 출력
+        document.write('<h3> 총점 기준으로 오름차순 정렬한 데이터</h3>');
+        students.forEach(function (data, idx) {
+            document.write(idx + ' : ' + data + '<br>');
+        });
+
+
+        // 국어성적 기준으로 오름차순 정렬
+        students.sort(function (left, right) {
+            return left.kor - right.kor; // return 음수면 left가 앞, return 양수면 right를 앞으로
+        });
+        document.write('<h3> 국어성적 기준으로 오름차순 정렬한 데이터</h3>');
+        students.forEach(function (data, idx) {
+            document.write(idx + ' : ' + data + '<br>');
+        });
+
+        // 이름 기준으로 오름차순 정렬
+        students.sort(function (left, right) {
+            if (left.name <= right.name) {
+                // return 음수면 left가 앞, return 양수면 right를 앞으로
+                // 앞과 뒤가 동일하면 위치 바꾸지 않는 것도 = 로 추가!
+                return -1; // return 음수면 left가 앞으로 이동
+            } else if (left.name > right.name) {
+                return 1; //return 양수면 right가 앞으로 이동
+            } else {
+                return 0; // return 0이면 위치 그대로
+            }
+        });
+
+        document.write('<h3> 이름 기준으로 오름차순 정렬한 데이터</h3>');
+        students.forEach(function (data, idx) {
+            document.write(idx + ' : ' + data + '<br>');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

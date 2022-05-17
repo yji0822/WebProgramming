@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // 이미 만들어져 있는 객체
+
+        /* var cnt = 0; // 횟수 넣을 변수
+        for (var key in window) {
+            document.write(++cnt + '. ' + key + ' : ' + window[key] + '<br>');
+        } */
+        // 출력을 위한 변수인 key도 나온다!
+
+       
+        var cnt = 0;
+        function chk() { } // 만들어 놓으면 윈도우의 속성으로 들어가게 된다.
+        //var chk = function () { }; 익명함수
+
+        // on으로 시작되는 함수는 이벤트 관련 함수이다!
+        //onload : null - 윈도우가 로드될때 아무것도 실행하지 않는다.
+        // 윈도우가 로드될때 실행된다.
+        window.onload = function () {
+            alert('윈도우 로드'); 
+        }
+
+        for (var key in window) {
+            if (key == 'onload' || key == 'chk' || key == 'cnt') {
+                document.write(key + ' : ' + window[key] + '<br>');
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

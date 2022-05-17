@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function openWin() {
+            var child = open('', 'childWin', 'width=300, height=300'); // 새창열기
+            if (!child) {
+                alert('팝업 차단 해제해주세요.');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <button onclick="openWin()"> 새창열기 </button>
+    <hr/>
+    <a href="https://www.daum.net" target="childWin">다음 홈페이지로!</a>
+    <!-- window이름이랑 target이름이 같아야 한다! childWin-->
+    <!-- 새창 열기 버튼을 누른 후에 다음으로를 눌러야지 새 탭에서 다음 홈페이지로 넘어간다! -->
+</body>
+</html>

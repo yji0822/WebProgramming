@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // 익명함수던 선언적함수던 어떻게 써도 상관 없다.
+        function login() {
+            // 로그인 버튼을 누를때 수행 
+            // getElementsByName - 파라미터가 복수개일 수도 있어서. return값은 배열
+            var id = document.getElementsByName('id')[0].value; // id
+            var pw = document.getElementsByName('pw')[0].value; // pw
+            var gender = document.getElementsByName('gender'); // gender는 두개..!
+            // 0방을 체크 : 남자 / 1번방 : 여자
+            if (gender[0].checked) {
+                alert('남자 ' + id + '님 비번: ' + pw);
+            } else if (gender[1].checked) {
+                alert('여자 ' + id + '님 비번: ' + pw);
+            } else {
+                alert('성별을 선택하세요');
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <form action="" onsubmit="return">
+        <h4>로그인</h4>
+        <p>ID <input type="text" name="id" /></p>
+        <p>PW <input type="password" name="pw" /></p>
+        <p>
+            <input type="radio" name="gender" value="m" />남자
+            <input type="radio" name="gender" value="f" />여자
+        </p>
+        <p><input type="button" value="로그인" onclick="login()"/></p>
+        <p><button>submit버튼</button></p>
+    </form>
+</body>
+</html>

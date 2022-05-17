@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var sec = 0; //1,2,3초 출력
+        var id = setInterval(function(){
+            sec++;
+            document.body.innerHTML += '<h4>' + sec + '초 지남</h4>';
+        }, 1000); // 1초에 한번씩 실행되는 로직(반복적으로 실행하는 것)
+
+        setTimeout(function () {
+            // 타이머 중지하고 다른 페이지로 넘어가도록 하는 로직 추가
+            clearInterval(id);
+            location.href = '07_history.html'; // 변경할 페이지 url 넣기
+            //location = '07_history.html'; // 위의 코드와 동일한 방법
+            //location.assign('7_history.html'); // 위의 코드와 동일한 방법
+        }, 3000);
+    </script>
+</head>
+<body>
+    <h1>잠시 후 페이지 이동이 있겠습니다.</h1>
+    <!-- 1초,2초, 3초 뿌린 후에 이동하는 로직-->
+</body>
+</html>

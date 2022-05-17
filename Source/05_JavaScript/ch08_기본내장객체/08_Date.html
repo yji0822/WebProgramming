@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="intervalDay.js"></script>
+    <script>
+        var now = new Date();
+        document.write('지금 : ' + now + '<br>'); // Tue May 17 2022 10:43:39 GMT+0900 (한국 표준시)
+        document.write('지금(가독성 높게) : ' + now.toLocaleString() + '<br>'); //2022. 5. 17. 오전 10:43:39
+        document.write('날짜 : ' + now.toLocaleDateString() + '<br>'); // 2022. 5. 17.
+        document.write('시간 : ' + now.toLocaleTimeString() + '<br>'); //오전 10:44:57
+
+        // 수료날까지 몇일 남았는지! (날짜수 계산)
+        // 1970.1.1 0시 기준 (자바와 동일)
+        var limitday = new Date(2022, 7, 18, 15, 20, 0); // 수료시점 8월 18일 오후 3시 20분 (월은 -1 해주기)
+        var day = limitday.intervalDay(now);
+        day = now.intervalDay(limitday);
+
+        document.write('수료일 : ' + limitday.toLocaleDateString() + '<br>');
+        document.write('남은 날짜 : ' + day + '일');
+
+        // 오늘 날짜로부터 7일이 지난 후를 출력하고 싶을 때
+        var date = new Date();
+        date.setDate(date.getDate() + 7);
+        alert(date);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
