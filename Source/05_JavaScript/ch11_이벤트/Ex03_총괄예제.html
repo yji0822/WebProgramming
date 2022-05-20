@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function imgChange(n) {
+            var img1 = document.getElementsByTagName('img');
+            img1[n].setAttribute('src', 'img/but2.gif');
+        }
+
+        function imgReset(n) {
+            var img2 = document.getElementsByTagName('img');
+            img2[n].setAttribute('src', 'img/but1.gif');
+        }
+    </script>
+</head>
+<body>
+    <img src="img/but1.gif" onmousedown="imgChange(0)" onmouseup="imgReset(0)" />
+</body>
+</html>

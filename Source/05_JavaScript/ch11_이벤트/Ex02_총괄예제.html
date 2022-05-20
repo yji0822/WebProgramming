@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var changeImg = ['img/0over.jpg', 'img/1over.jpg', 'img/1over.jpg','img/3over.jpg'];
+        var originImg = ['img/0out.jpg', 'img/1out.jpg', 'img/2out.jpg', 'img/3out.jpg'];
+
+        function imgChange(n) {
+            var img1 = document.getElementsByTagName('img');
+            img1[n].src = changeImg[n];
+            //img1[n].setAttribute('src','img/ddd.jpg')
+        } 
+
+        function imgReset(n) {
+            var img2 = document.getElementsByTagName('img');
+            img2[n].src = originImg[n];
+        }
+    </script>
+</head>
+<body>
+    <img src="img/0out.jpg" onmouseover="imgChange(0)" onmouseout="imgReset(0)" />
+    <img src="img/1out.jpg" onmouseover="imgChange(1)" onmouseout="imgReset(1)" />
+    <img src="img/2out.jpg" onmouseover="imgChange(2)" onmouseout="imgReset(2)" />
+    <img src="img/3out.jpg" onmouseover="imgChange(3)" onmouseout="imgReset(3)" />
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onkeyup = function () {
+            //alert(event.keyCode); // 눌러진 키의 아스키코드 출력
+            // 키패드를 누르면 body에 계속해서 추가된다
+            //document.body.innerHTML += event.keyCode + '<br>'; 
+
+            // 오른쪽 숫자를 입력했을 경우에 누른 숫자와 아스키코드 출력
+            //document.body.innerHTML += (event.keyCode - 96) + ':' + event.keyCode + '<br>';
+
+            // 오른쪽 숫자 키패드(96~105)
+            // 위 숫자 키패드(48~57)
+            document.body.innerHTML += '눌러진 키패드의 아스키코드 : ' + event.keyCode + '<br>';
+        };
+        window.onclick = function () {
+            // 컴퓨터 화면에서의 좌표
+            document.body.innerHTML =
+                '스크린좌표 : ' + event.screenX + ', ' + event.screenY + '<br>';
+            // 실행된 창에서의 좌표
+            document.body.innerHTML +=
+                'offset좌표 : ' + event.offsetX + ', ' + event.offsetY + '<br>';
+        };
+
+       
+    </script>
+</head>
+<body>
+</body>
+</html>

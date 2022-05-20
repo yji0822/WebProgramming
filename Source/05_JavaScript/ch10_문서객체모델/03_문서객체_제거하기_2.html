@@ -11,7 +11,8 @@
         }
         function remove() {
             var h = document.getElementsByTagName('h1');
-            // 0방을 지우게 되면 뒤에 있는 header들이 당겨져서 0방이 되기 때문에 
+            // 모든 추가된 것들 다 지우기!
+            // 0방을 지우게 되면 뒤에 있는 header들이 당겨져서 0방이 되기 때문에
             // 뒤에 있는 인덱스부터 0방까지 지워주어야 한다.
             for (var idx=h.length-1; idx>=0; idx--) {
                 document.body.removeChild(h[idx]); 

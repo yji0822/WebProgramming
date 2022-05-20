@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<!-- 파라미터 나오기 전에는 무조건 ?(물음표)가 들어가야 한다. -->
+	<a href="../Ex1?id=김&pw=ppp">Ex1서블릿에게 id와 pw 넘기기(get방식)</a>
+	<hr>
+	<button onclick="location.href='../Ex1?id=김&pw=ppp'">Ex1 서블릿에게
+		id와 pw 넘기기</button>
+	<hr>
+	<form action="../Ex1" method="get">
+		<p>
+			ID <input type="text" name="id">
+		</p>
+		<p>
+			PW <input type="password" name="pw">
+		</p>
+		<p>
+			<input type="submit" value="Ex1 서블릿에게 id와 pw넘기기(GET)">
+		</p>
+	</form>
+	
+	<form action="../Ex1" method="post">
+		<p>
+			ID <input type="text" name="id" value="한">
+		</p>
+		<p>
+			PW <input type="password" name="pw">
+		</p>
+		<p>
+			<input type="submit" value="Ex1 서블릿에게 id와 pw넘기기(post)">
+		</p>
+	</form>
+</body>
+</html>
