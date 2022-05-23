@@ -32,5 +32,16 @@
 	}
 	%>
 	
+	<%! private long power1(int a, int b) {
+		long temp1 = 1;
+		for(int i=1; i<=b; i++){
+			temp1 *= a;
+		}
+		return temp1;
+	}
+	%>
+	<% long result2 = power1(3,1); %>
+	<h1>3의 1제곱은 <%=result2 %>입니다.</h1>
+	<h1>4의 2제곱은 <%=power(4,2) %></h1>
 </body>
 </html>

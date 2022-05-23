@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		// 윈도우.onload는 원래 null이 들어있다.
+		window.onload = function(){
+			// submit default 이벤트 제한 : checkbox가 한개도 체크되어 있지 않을 때.
+			// 배열로 받은 후에 0~3번째 체크가 되었니? 라고 확인을 해야한다.
+			// querySelector() 에는 선택자!
+				document.querySelector('form').onsubmit = function() {
+					var hobby = document.querySelectorAll('input[name="hobby"]'); // 배열. querySelector와 비슷한 방식이 jquery에 있다.	
+					var cnt = 0; // 체크박스가 몇개 체크될지 - cnt가 0이면 return false;
+					for(var i=0; i<hobby.length; i++){
+						// alert(i); // 체크가 되었던 되어있지 않던 무조건 alert가 실행되는 로직(0~3)
+						if(hobby[i].checked) {
+							// hobby[i].checked : 체크되면 true(1), 언체크드면 false(0)
+							// cnt++;
+							// 자바스크립트는 true(1) + false(0) 도 연산이 가능하다.
+							cnt =  cnt + hobby[i].checked;
+						} // if
+					} // for
+					if(!cnt){ //cnt가 0이라면
+						alert('취미를 한개 이상 선택하여 주세요.');
+						return false;
+					}
+					return true;
+			}; // onsubmit
+		}; // onload
+	</script>
+</head>
+<body>
+	<!-- checkbox에 반드시 하나 이상을 선택할 수 있도록 -->
+	<form action="#">
+	<p>취미<br/>
+		<input type="checkbox" name="hobby" value="독서">독서 
+		<input type="checkbox" name="hobby" value="요리">요리 
+		<input type="checkbox" name="hobby" value="운동">운동 
+		<input type="checkbox" name="hobby" value="취침">취침 
+	</p>
+	<p>
+		<input type="submit" value="가입하기">
+	</p>
+	</form>
+</body>
+</html>

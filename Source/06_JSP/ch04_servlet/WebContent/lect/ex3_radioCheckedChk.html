@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		window.onload = function() {
+			document.querySelector('form').onsubmit = function() {
+				// default 이벤트 제한 : 동의합니다를 체크하지 않으면 제한. (다음 페이지로 넘어갈 수 없음)
+				var agreeYes = document.querySelector('input[name="agree"]'); // querySelector는 무조건 첫번째 것만 가져온다
+				if(!agreeYes.checked) { // 동의부분에 checked가 되어있지 않다면.
+					alert('동의하셔야 진행됩니다.');
+					return false;
+				} // if
+			}; // onsubmit
+		}; // onload
+	</script>
+</head>
+<body>
+	<fieldset>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</fieldset>
+	<form action="">
+		<input type="radio" name="agree" value="yes">동의
+		<input type="radio" name="agree" value="no">비동의
+		<br/>
+		<input type="submit" value="NEXT">
+	</form>
+</body>
+</html>

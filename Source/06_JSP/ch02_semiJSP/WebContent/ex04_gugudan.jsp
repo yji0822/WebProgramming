@@ -9,6 +9,8 @@
 	table {
 		width: 300px;
 		margin: 10px auto;
+		border: 1px solid black;
+		text-align : center;
 	}
 </style>
 </head>
