@@ -38,12 +38,12 @@ public class Join extends HttpServlet {
 		Date birth2 = null;
 		Timestamp birth3 = null;
 		if(birth !="") {
-			birth2      = Date.valueOf(request.getParameter("birth")); // 데이터베이스 연동을 위하여 사용
+			birth2   = Date.valueOf(request.getParameter("birth")); // 데이터베이스 연동을 위하여 사용
 			birth3   = Timestamp.valueOf(request.getParameter("birth") + " 00:00:00"); // 데이터베이스 연동 TimeStamp는 반드시 시간이 들어가야 한다.
 		}
-		String[] hobby = request.getParameterValues("hobby"); // 하나도 안받을 수 있다. - 배열(하나라도 체크했으면) or null
-		String gender  = request.getParameter("gender");
-		String email   = request.getParameter("email");
+		String[] hobby    = request.getParameterValues("hobby"); // 하나도 안받을 수 있다. - 배열(하나라도 체크했으면) or null
+		String gender     = request.getParameter("gender");
+		String email  	  = request.getParameter("email");
 		String[] mailSend = request.getParameterValues("mailSend"); // 배열
 		
 		response.setContentType("text/html; charset=utf-8");
@@ -75,7 +75,7 @@ public class Join extends HttpServlet {
 				if(i==hobby.length-1) {
 					out.println(hobby[i]);
 				} else {
-					// 여러개가 있을 경우
+					// 여러 개가 있을 경우
 					out.println(hobby[i] + ", ");
 				} // if-else
 			}
