@@ -18,7 +18,7 @@
 		id = request.getParameter("id");
 		pw = request.getParameter("pw");
 		// 입력받은 id, pw가 DB에 있는지 확인하는 절차
-		if (id != null && id.equals("aaa") && pw!=null && pw.equals("1111")) {
+		if (id != null && id.equals("aaa") && pw!=null && pw.equals("111")) {
 			// 로그인 처리 
 			Cookie cookie = new Cookie("id", id);
 			cookie.setMaxAge(-1); // 유효시간은 브라우저 닫을 때까지 유효함
