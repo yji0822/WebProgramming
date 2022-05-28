@@ -18,10 +18,10 @@
 	<!-- 동일하게 빈을 생성해주면 step4에서 적어준 것을 받아올 수 있다. -->
 	<jsp:useBean id="p" class="com.lec.ex.Person" scope="request"/>
 	<h2>입력된 개인정보</h2>
-	<p>이름 : <jsp:getProperty property="name" name="p"/>
-	<p>나이 : <jsp:getProperty property="age" name="p"/>
-	<p>성별 : <jsp:getProperty property="gender" name="p"/>
-	<p>주소 : <jsp:getProperty property="address" name="p"/>
+	<p>이름 : <jsp:getProperty property="name" name="p"/></p>
+	<p>나이 : <jsp:getProperty property="age" name="p"/></p>
+	<p>성별 : <jsp:getProperty property="gender" name="p"/></p>
+	<p>주소 : <jsp:getProperty property="address" name="p"/></p>
 
 </body>
 </html>
