@@ -30,7 +30,7 @@
 	<jsp:include page="header.jsp" />
 	<div id="mainForm_wrap">
 		<%
-			boolean outOk = false;
+			boolean outOk = false; 
 		Cookie[] cs = request.getCookies();
 		if (cs != null) {
 			for (Cookie c : cs) {
@@ -38,7 +38,8 @@
 				String cvalue = c.getValue();
 				if (cname.equals("id") || cname.equals("name")) {
 			out.println("<h3>" + cname + "(쿠키이름) / " + cvalue + "(쿠키값)</h3>");
-			outOk = true;
+			outOk = true; 
+			// 원하지 않는 쿠키값이 출력이 되어버릴 수 있기 때문에 if문 안에 boolean true로 바꾼 다음에 밑의 if문 실행으로 넘어갈 수 있도록 한다
 				} //if
 			} //for
 		}
