@@ -15,10 +15,10 @@
 
 	<jsp:useBean id="st" class="com.lec.ex.Student" scope="request"/>
 	<h2>학생 정보 출력</h2>
-	<p>학번 : <jsp:getProperty property="sno" name="st"/>
+	<p>학번 : <jsp:getProperty property="studentNum" name="st"/>
 	<p>이름 : <jsp:getProperty property="name" name="st"/>
 	<p>학년 : <jsp:getProperty property="grade" name="st"/>
-	<p>반 : <jsp:getProperty property="classs" name="st"/>
+	<p>반 : <jsp:getProperty property="className" name="st"/>
 	<p>점수 : <jsp:getProperty property="score" name="st"/>
 
 </body>

@@ -1,27 +1,21 @@
 package com.lec.ex;
 
 public class Student {
-
-	private String sno; // 학번
-	private String name; // 이름
-	private int grade; // 학년
-	private char classs; // 반
-	private int score; // 점수
 	
-	public Student() {}
-	public Student(String sno, String name, int grade, char classs, int score) {
-		super();
-		this.sno = sno;
-		this.name = name;
-		this.grade = grade;
-		this.classs = classs;
-		this.score = score;
+	private String studentNum;
+	private String name;
+	private int    grade;
+	private char   className;
+	private int    score;
+	
+	// 디폴트 생성자와 매개변수 있는 생성자는 현재 데이터 베이스와 연결되는 것이 아니기 때문에 안적어 주어도 된다.
+	
+	//setters & getters
+	public String getStudentNum() {
+		return studentNum;
 	}
-	public String getSno() {
-		return sno;
-	}
-	public void setSno(String sno) {
-		this.sno = sno;
+	public void setStudentNum(String studentNum) {
+		this.studentNum = studentNum;
 	}
 	public String getName() {
 		return name;
@@ -35,11 +29,11 @@ public class Student {
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
-	public char getClasss() {
-		return classs;
+	public char getClassName() {
+		return className;
 	}
-	public void setClasss(char classs) {
-		this.classs = classs;
+	public void setClassName(char className) {
+		this.className = className;
 	}
 	public int getScore() {
 		return score;
@@ -47,5 +41,5 @@ public class Student {
 	public void setScore(int score) {
 		this.score = score;
 	}
+	
 }
-

@@ -21,8 +21,10 @@
 	<jsp:setProperty name="p" property="gender" value='<%=request.getParameter("gender").charAt(0) %>'/>
 	<jsp:setProperty name="p" property="address" value='<%=request.getParameter("address") %>'/>
 	
+	<!-- 출력하는 부분은 pView.jsp로 분리 -->
 	<jsp:forward page="pVeiw.jsp"></jsp:forward>
 	<!--  forward하면 주소창이 바뀌지 않는다. -->
+	
 	
 </body>
 </html>
