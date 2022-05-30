@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
 	<%
 		// 세션에 속성 추가 (객체 타입으로 추가) - 뺄때 object type로 리턴
 		session.setAttribute("sessionName", "sessionValue");

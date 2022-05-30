@@ -15,7 +15,6 @@
 
 	<%
 		// 특정 session 값 받아올 것 - 반드시 ex1_sessionAddAttribute.jsp 에서 실행하자
-		
 		// 특정 session 속성 값 가져오기
 		String sessionName = (String)session.getAttribute("sessionName"); // object type을 넣어주어야 하기 때문에 형변환 필수!
 		Integer myNum = (Integer)session.getAttribute("myNum");
