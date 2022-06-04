@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MemberDto {
+	
 	private String id;
 	private String pw;
 	private String name;
@@ -108,8 +109,5 @@ public class MemberDto {
 				+ ", phone3=" + phone3 + ", gender=" + gender + ", email=" + email + ", birth=" + birth + ", rdate="
 				+ rdate + ", address=" + address + "]";
 	}
-	
-	
-	
 	
 }

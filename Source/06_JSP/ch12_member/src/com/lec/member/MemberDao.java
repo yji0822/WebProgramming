@@ -28,7 +28,7 @@ public class MemberDao {
 		return instance;
 	}
 	
-	// new 사용해서 사용할 수 없게 하도록
+	// default 생성자 : new 사용해서 사용할 수 없게 하도록
 	private MemberDao() {}
 	
 	// conn 객체 리턴하는 함수
@@ -42,7 +42,7 @@ public class MemberDao {
 	
 	// 1. 회원가입 시 ID 중복 체크를 위한 SQL : public int confirmId(String id) 
 	public int confirmId(String id) {
-		int result = MEMBER_EXISTENT;
+		int result = MEMBER_EXISTENT; // 중복된 id일때
 		//중복인지 사용 가능인지 SQL로 조회 : SELECT * FROM MEMBER WHERE ID = 'aaa';
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -138,7 +138,7 @@ public class MemberDao {
 		try {
 			conn = getConnection(); // (2)
 			pstmt = conn.prepareStatement(sql); // (3)
-			pstmt.setNString(1, id);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery(); // (4) + (5)
 			if(rs.next()) {
 				// 유효한 id를 입력
@@ -189,7 +189,7 @@ public class MemberDao {
 		try {
 			conn = getConnection(); // (2)
 			pstmt = conn.prepareStatement(sql); // (3)
-			pstmt.setNString(1, id);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery(); // (4) + (5)
 
 			if(rs.next()) {
