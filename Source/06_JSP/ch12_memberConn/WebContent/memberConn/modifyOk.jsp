@@ -29,7 +29,7 @@
 	<jsp:setProperty name="dto" property="*" />
 	
 	<%
-		String tempbirth = request.getParameter("tempbirth");
+	String tempbirth = request.getParameter("tempbirth");
 	if (!tempbirth.equals("")) {
 		dto.setBirth(Timestamp.valueOf(tempbirth + " 00:00:00"));
 	}
