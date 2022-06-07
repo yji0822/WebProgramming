@@ -4,9 +4,9 @@ DROP TABLE MEMBER;
 DROP TABLE MEMBER CASCADE CONSTRAINTS; -- 강제 삭제
 
 CREATE TABLE MEMBER(
-    ID VARCHAR2(30) PRIMARY KEY,
-    PW VARCHAR2(30) NOT NULL,
-    NAME VARCHAR2(30) NOT NULL,
+    ID VARCHAR2(30) PRIMARY KEY, -- 아이디
+    PW VARCHAR2(30) NOT NULL, -- 비밀번호
+    NAME VARCHAR2(30) NOT NULL, -- 이름
     PHONE1 VARCHAR2(5), -- 국번
     PHONE2 VARCHAR2(5), -- 중간번호
     PHONE3 VARCHAR2(5), -- 뒷번호
@@ -32,7 +32,7 @@ SELECT ID, PW FROM MEMBER WHERE ID = 'aaa';
 -- 멤버 객체 자체를 넣을 것임
 SELECT * FROM MEMBER WHERE ID = 'aaa';
 
--- 5. 회원정보 수정 : public int menberDto modifyMember(MemberDto dto)
+-- 5. 회원정보 수정 : public int memberDto modifyMember(MemberDto dto)
 -- 입력한 정보를 가지고 dto를 가지고 오기 - 세션에 있는거 뿌려오기
 -- 수정한 후에 update가 가능하도록
 UPDATE MEMBER SET PW = '111', 
