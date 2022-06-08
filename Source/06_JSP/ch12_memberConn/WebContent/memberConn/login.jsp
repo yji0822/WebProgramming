@@ -22,7 +22,7 @@
 			<tr>
 				<th>아이디</th>
 				<td><input type="text" name="id" required="required"
-							value="<%
+							value="<% //joinOk.jsp에서 받아온 id 넣어주기
 								String id = (String) session.getAttribute("id");
 								out.println(id!=null ? id : "");
 							%>">

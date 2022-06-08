@@ -36,18 +36,6 @@
 	<header>
 		<div id="nav">
 		<%
-		// 쿠키 있는지 확인
-	/* 	String id = null;
-		Cookie[] cs = request.getCookies();
-		if(cs!=null) {
-			for(Cookie c : cs){
-				if(c.getName().equals("id")){
-					id = c.getValue();
-					break;
-				} // if
-			} // for
-		} // if */
-		
 		// 세션
 		String name = (String)session.getAttribute("name");
 					

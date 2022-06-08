@@ -59,7 +59,7 @@ public class MemberDaoConn {
 				if(pstmt!=null) pstmt.close();
 				if(conn !=null) conn.close();
 			} catch (Exception e) {
-				// TODO: handle exception
+				System.out.println(e.getMessage());
 			}
 		}
 		return result;

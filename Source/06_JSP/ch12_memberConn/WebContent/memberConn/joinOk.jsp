@@ -33,7 +33,7 @@
 			// 아이디가 존재하지 않다면 회원가입 진행
 			result = mDao.joinMember(dto); // 빈태그에서 불러온 값들을 저장해준다.
 			if(result == MemberDaoConn.SUCCESS) {
-				session.setAttribute("id", dto.getId()); // 가입이 성공했으면 id를 세션에 저장해준다.
+				session.setAttribute("id", dto.getId()); // 가입이 성공했으면 id를 세션에 저장해준다. >> login.jsp
 			}
 	%>
 		<script>
