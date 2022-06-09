@@ -25,7 +25,6 @@
 <%
 	String path = request.getRealPath("fileUpFolder");
 	// out.print(path); // path 설정 : 톰캣 폴더 기준으로 저장된다. 내 소스 폴더에 저장되는 것이 아님!
-	
 	int maxSize = 1024 * 1024 * 10; // 최대 파일 업로드 사이즈 설정 10Mb(이력서 업로드 기준)
 	String filename= ""; // 서버에 저장될 파일 이름 - null로 초기화 (첨부하지 않으면 자동으로 null로 초기화가 된다.)
 	// 중복 이름이 있으면 알아서 이름을 변경해서 넣어줄 예정 - 업로더가 올린 파일명은 변경하지 않으되, 시스템에서는 rename을 해주어서 저장해준다.
