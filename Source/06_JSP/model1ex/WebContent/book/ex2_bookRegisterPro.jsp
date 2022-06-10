@@ -1,6 +1,6 @@
-<%@page import="com.lec.book.BookDto"%>
+<%@page import="com.lec.dto.BookDto"%>
+<%@page import="com.lec.dao.BookDao"%>>
 <%@page import="java.sql.Date"%>
-<%@page import="com.lec.book.BookDao"%>
 <%@page import="java.io.FileOutputStream"%>
 <%@page import="java.io.FileInputStream"%>
 <%@page import="java.io.File"%>
@@ -25,7 +25,7 @@
 <body>
 
 	<%
-		// 한글 인코딩 처리 = multipartRequest 객체 생성 - 첨부된 파일명 get - 그 외 파라미터에서 입력된 정보 get - insert
+		// 한글 인코딩 처리 = multioartRequest 객체 생성 - 첨부된 파일명 get - 그 외 파라미터에서 입력된 정보 get - insert
 		request.setCharacterEncoding("utf-8");
 		// 빈태그로 받을 수 있지만 안받을 것
 		
