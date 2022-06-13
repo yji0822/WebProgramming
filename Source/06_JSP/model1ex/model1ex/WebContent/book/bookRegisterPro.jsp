@@ -19,11 +19,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="<%=conPath%>/css/style.css" rel="stylesheet">
+	<link href="<%=conPath%>/css/bookstyle.css" rel="stylesheet">
 </head>
 
 <body>
 
+	<jsp:include page="../main/header.jsp"/>
 	<%
 		// 한글 인코딩 처리 = multioartRequest 객체 생성 - 첨부된 파일명 get - 그 외 파라미터에서 입력된 정보 get - insert
 		request.setCharacterEncoding("utf-8");
@@ -70,7 +71,7 @@
 					// 여기까지 왔다는 것은 파일이 첨부되어 있다는 의미
 					// 스트림 객체 생성
 					is = new FileInputStream(serverFile);
-					os = new FileOutputStream("D:/webPro/source/06_JSP/ch14_fileUp/WebContent/bookImg/" + img); // 폴더를 받아오고 뒤에 / 꼭 써주기
+					os = new FileOutputStream("D:/webPro/source/06_JSP/model1ex/WebContent/bookImg/" + img); // 폴더를 받아오고 뒤에 / 꼭 써주기
 					// 통째로 불러들이기 위해서 사용하는 byte
 					byte[] bs = new byte[(int)serverFile.length()]; // maxsize가 5mb이기 때문에 int로 받아주어도 된다.
 					while(true) {
@@ -107,13 +108,17 @@
 		BookDao bDao = BookDao.getInstance();
 		BookDto book = new BookDto(bid, btitle, bprice, bimage1, bimage2, bcontent, bdiscount, brdate);
 		int result = bDao.insertBook(book);
-		if(result == BookDao.SUCCESS) {
-			out.println("<h2>책 등록 성공 </h2>");
-		} else {
-			out.println("<h2>책 등록 실패</h2>");	
-		}
-		
-	%>
+		if(result == BookDao.SUCCESS) { %>
+		<script>
+			alert('책 등록 성공');
+			location.href="booklist.jsp";
+		</script>
+		<% } else { %>
+		<script>
+			alert('책 등록 성공');
+			location.href="bookRegister.jsp";
+		</script>
+		<%}%>
 	
 	<!-- 출력 -->
 	<h3>책 이름 : <%=btitle %></h3>
@@ -127,10 +132,12 @@
 	<h3>책 가격 : <del><%=bprice%></del> <%=bprice*(100-bdiscount)/100 %>원</h3>
 	<h3>할인율 : <%=bdiscount %></h3>
 	
-	<a href="ex3_list_board.jsp">책 전체 리스트(게시판 스타일)</a>
+	<!-- <a href="ex3_list_board.jsp">책 전체 리스트(게시판 스타일)</a>
 	<a href="ex3_list_boardp.jsp">책 리스트(paging 게시판 스타일)</a>
-	<a href="ex3_list_product.jsp">책 전체 리스트(쇼핑몰 스타일)</a>
-	<a href="ex3_list_productp.jsp">책 리스트(paging 추가된 쇼핑몰 스타일)</a>
+	<a href="ex3_list_product.jsp">책 전체 리스트(쇼핑몰 스타일)</a> -->
+	<a href="booklist.jsp">책 리스트(paging 추가된 쇼핑몰 스타일)</a>
+	
+	<jsp:include page="../main/footer.jsp"/>
 	
 </body>
 </html>

@@ -18,13 +18,11 @@
 <%
 	String tempbirth = request.getParameter("tempbirth");
 	dto.setCbirth(Date.valueOf(tempbirth));
-	
 	CustomerDao cDao = CustomerDao.getInstance();
 	int result = cDao.confirmedCid(dto.getCid());
-	
 	if(result == CustomerDao.CUSTOMER_NONEXISTENT){ // 사용가능한(없는) ID
 		result = cDao.insertCustomer(dto);
-		if(result == CustomerDao.SUCCESS){
+		if(result ==CustomerDao.SUCCESS){
 			session.setAttribute("cid", dto.getCid());
 %>		<script>
 				alert('회원가입 감사합니다. 로그인 이후에 서비스를 이용하세요');

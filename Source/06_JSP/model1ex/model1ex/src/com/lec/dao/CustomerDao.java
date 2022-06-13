@@ -64,9 +64,9 @@ public class CustomerDao {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				result = CUSTOMER_EXISTENT;
-			} else {
 				result = CUSTOMER_NONEXISTENT;
+			} else {
+				result = CUSTOMER_EXISTENT;
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

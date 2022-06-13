@@ -98,6 +98,8 @@ SELECT * FROM FILEBOARD WHERE FREF = 5
 -- 6. 글 상세보기 (fnum으로 dto 가져오기)
 -- 내가 쓴 글만 수정할 수 있도록 진행
 SELECT * FROM FILEBOARD WHERE FNUM = 5;
+-- equi join 사용해야  함(추가)
+SELECT F.*, CNAME, CEMAIL FROM FILEBOARD F, CUSTOMER C WHERE F.CID=C.CID AND FNUM=2;
 
 -- 7. 조회수 올리기 
 COMMIT;

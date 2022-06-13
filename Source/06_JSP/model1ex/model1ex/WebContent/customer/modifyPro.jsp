@@ -1,16 +1,17 @@
-<%@page import="com.lec.customer.*"%>
+<%@page import="com.lec.dao.CustomerDao"%>
+<%@page import="com.lec.dto.CustomerDto"%>
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
 	<%request.setCharacterEncoding("utf-8");%>
-	<jsp:useBean id="dto" class="com.lec.customer.CustomerDto"/>
+	<jsp:useBean id="dto" class="com.lec.dto.CustomerDto"/>
 	<jsp:setProperty name="dto" property="*" />
 	<%
 		String tempbirth = request.getParameter("tempbirth");
@@ -23,7 +24,6 @@
 		}
 		// 새비밀번호를 수정하지 않을 때(pw가 null이 들어옴)
 		if(dto.getCpw()==null){
-			System.out.println("비밀번호 안 바꿔");
 			dto.setCpw(sessionPw);
 		}
 		if(oldPw.equals(sessionPw)){ // 현비밀번호를 맞게 입력한 경우 정보 수정 진행
@@ -33,7 +33,7 @@
 				session.setAttribute("customer", dto);
 %>				<script>
 						alert('회원정보 수정이 완료되었습니다');
-						location.href = 'main.jsp';
+						location.href = '../main/main.jsp';
 					</script>
 <%			}else{%>
 					<script>
@@ -41,8 +41,7 @@
 						location.href = 'modify.jsp';
 					</script>
 <%			}
-		}else{ // 현비밀번호를 틀리게 입력한 경우 뭐라 하고 입력 창으로 보내줌
-			
+		}else{ // 현비밀번호를 틀리게 입력한 경우 뭐가 카고 돌려보냄
 %>
 			<script>
 				alert('현비밀번호가 바르지 않습니다. 확인하세요');

@@ -11,10 +11,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="<%=conPath%>/css/style.css" rel="stylesheet">
+	<link href="<%=conPath%>/css/bookstyle.css" rel="stylesheet">
 </head>
 
 <body>
+	
+	<jsp:include page="../main/header.jsp"/>
 	
 		<table>
 			<tr>
@@ -42,7 +44,7 @@
 
 			<!-- ** 상세보기 페이지 : bid와 pageNum을 가지고 넘어가야 한다. -->
 			<!-- pageNum이 존재하지 않는다면 1페이지로 넘어가게 하는 로직도 있다! -->
-			<a href="ex4_detail.jsp?bid=<%=books.get(i).getBid()%>&pageNum=<%=pageNum%>">				
+			<a href="detail.jsp?bid=<%=books.get(i).getBid()%>&pageNum=<%=pageNum%>">				
 				<img src="../bookImg/<%=books.get(i).getBimage1() %>"><br>
 				<%=books.get(i).getBtitle() %><br>
 			</a>	
@@ -71,21 +73,23 @@
 		}
 		if(startPage > BLOCKSIZE) {
 		%>
-			[<a href="ex3_list_productp.jsp?pageNum=<%=startPage-1 %>"> 이전블록 </a>]
+			[<a href="booklist.jsp?pageNum=<%=startPage-1 %>"> 이전블록 </a>]
 		<%}
 			
 		for(int i = startPage; i<=endPage; i++) {
 			if(i == currentPage) {
 				out.println("[ <b> " + i + "</b> ]");
 		} else {
-			out.println("[ <a href='ex3_list_productp.jsp?pageNum=" + i + "'>" + i +"</a> ]");
+			out.println("[ <a href='booklist.jsp?pageNum=" + i + "'>" + i +"</a> ]");
 		}
 	} 
 		if(endPage<pageCnt) {
 			%>
-			[ <a href="ex3_list_productp.jsp?pageNum=<%=endPage+1 %>">다음</a> ]
+			[ <a href="booklist.jsp?pageNum=<%=endPage+1 %>">다음</a> ]
 	<%}	%>
 	</div>
+
+	<jsp:include page="../main/footer.jsp"/>
 
 </body>
 </html>

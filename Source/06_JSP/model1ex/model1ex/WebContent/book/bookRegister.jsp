@@ -8,12 +8,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="<%=conPath%>/css/style.css" rel="stylesheet">
+	<link href="<%=conPath%>/css/bookstyle.css" rel="stylesheet">
 </head>
 
 <body>
-
-	<form action="ex2_bookRegisterPro.jsp" method="post" enctype="multipart/form-data">
+	
+	<jsp:include page="../main/header.jsp"/>
+	
+	<form action="bookRegisterPro.jsp" method="post" enctype="multipart/form-data">
 
 		<table>
 
@@ -51,6 +53,8 @@
 			</tr>
 		</table>
 	</form>
+	
+	<jsp:include page="../main/footer.jsp"/>
 
 </body>
 </html>

@@ -16,6 +16,7 @@
 	String tempbirth = request.getParameter("tempbirth");
 	dto.setCbirth(Date.valueOf(tempbirth));
 	CustomerDao cDao = CustomerDao.getInstance();
+	
 	int result = cDao.confirmId(dto.getCid());
 	if(result == CustomerDao.CUSTOMER_NONEXISTENT){ // 사용가능한(없는) ID
 		result = cDao.insertCustomer(dto);

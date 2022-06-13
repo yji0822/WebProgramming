@@ -48,7 +48,7 @@
 			Enumeration<String> paramNames = mRequest.getFileNames(); // 파일명이 아닌 파라미터 이름을 받아오는 함수 getFileNames()
 			int idx = 0;
 			while(paramNames.hasMoreElements()) {
-				// 지금 가르키는 것 중에서 다른 요소가 있는지 확인
+				// 지금 가르키는 것 중에서 다른 요소가 있는지 확인                                                                                                                                                                                                                     
 				String param = paramNames.nextElement(); // image2를 호출 >> image1 호출
 				image[idx] = mRequest.getFilesystemName(param); // 서버에 파일을 첨부하고 첨부하고난 뒤의 파일명 저장 >> 서버에 있는 파일명 저장!
 				// 위의 소스 코드에서 파일을 첨부를 안했다면 null로 들어오게 한다.
@@ -127,10 +127,10 @@
 	<h3>책 가격 : <del><%=bprice%></del> <%=bprice*(100-bdiscount)/100 %>원</h3>
 	<h3>할인율 : <%=bdiscount %></h3>
 	
-	<a href="ex3_list_board.jsp">책 전체 리스트(게시판 스타일)</a>
-	<a href="ex3_list_boardp.jsp">책 리스트(paging 게시판 스타일)</a>
-	<a href="ex3_list_product.jsp">책 전체 리스트(쇼핑몰 스타일)</a>
-	<a href="ex3_list_productp.jsp">책 리스트(paging 추가된 쇼핑몰 스타일)</a>
+	<a href="ex3_list_board.jsp">(1) 책 전체 리스트(게시판 스타일)</a>
+	<a href="ex3_list_boardp.jsp">(2) 책 리스트(paging 게시판 스타일)</a>
+	<a href="ex3_list_product.jsp">(3) 책 전체 리스트(쇼핑몰 스타일)</a>
+	<a href="ex3_list_productp.jsp">(4) 책 리스트(paging 추가된 쇼핑몰 스타일)</a>
 	
 </body>
 </html>
