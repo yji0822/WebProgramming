@@ -23,6 +23,7 @@
 	 ${paramValues.pets[6] }
 	 ${paramValues.pets[7] }
 	 ${paramValues.pets[8] }
+	 ${paramValues.pets[9] }
 	 
 	  <!-- 들어간 파라미터 값이 있니? 확인 -->
 	 ${empty paramValues.pets ? "없습니다." : " " }
