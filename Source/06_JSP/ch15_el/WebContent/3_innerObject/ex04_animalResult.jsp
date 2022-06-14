@@ -15,9 +15,14 @@
 	<h3> ID : ${param.id }</h3> <!-- 같은 이름의 파라미터 두개면 앞에 있는 한개만 받아온다 -->
 	<h3>좋아하는 동물의 이름은
 	 ${paramValues.pets[0] }
-   ${paramValues.pets[1] }
+     ${paramValues.pets[1] }
 	 ${paramValues.pets[2] }
 	 ${paramValues.pets[3] }
+	 ${paramValues.pets[4] }
+	 ${paramValues.pets[5] }
+	 ${paramValues.pets[6] }
+	 ${paramValues.pets[7] }
+	 ${paramValues.pets[8] }
 	 
 	  <!-- 들어간 파라미터 값이 있니? 확인 -->
 	 ${empty paramValues.pets ? "없습니다." : " " }
