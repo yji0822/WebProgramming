@@ -11,11 +11,13 @@ public class BoardDto {
 	private int bhit;
 	private int bgroup;
 	private int bindent;
-	private int bip;
+	private String bip;
 	
 	public BoardDto() {}
+
 	public BoardDto(int bid, String bname, String btitle, String bcontent, Date bdate, int bhit, int bgroup,
-			int bindent, int bip) {
+			int bindent, String bip) {
+		super();
 		this.bid = bid;
 		this.bname = bname;
 		this.btitle = btitle;
@@ -26,63 +28,79 @@ public class BoardDto {
 		this.bindent = bindent;
 		this.bip = bip;
 	}
-	
-	// getter만 생성해도 된다.
+
 	public int getBid() {
 		return bid;
 	}
+
 	public void setBid(int bid) {
 		this.bid = bid;
 	}
+
 	public String getBname() {
 		return bname;
 	}
+
 	public void setBname(String bname) {
 		this.bname = bname;
 	}
+
 	public String getBtitle() {
 		return btitle;
 	}
+
 	public void setBtitle(String btitle) {
 		this.btitle = btitle;
 	}
+
 	public String getBcontent() {
 		return bcontent;
 	}
+
 	public void setBcontent(String bcontent) {
 		this.bcontent = bcontent;
 	}
+
 	public Date getBdate() {
 		return bdate;
 	}
+
 	public void setBdate(Date bdate) {
 		this.bdate = bdate;
 	}
+
 	public int getBhit() {
 		return bhit;
 	}
+
 	public void setBhit(int bhit) {
 		this.bhit = bhit;
 	}
+
 	public int getBgroup() {
 		return bgroup;
 	}
+
 	public void setBgroup(int bgroup) {
 		this.bgroup = bgroup;
 	}
+
 	public int getBindent() {
 		return bindent;
 	}
+
 	public void setBindent(int bindent) {
 		this.bindent = bindent;
 	}
-	public int getBip() {
+
+	public String getBip() {
 		return bip;
 	}
-	public void setBip(int bip) {
+
+	public void setBip(String bip) {
 		this.bip = bip;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "BoardDto [bid=" + bid + ", bname=" + bname + ", btitle=" + btitle + ", bcontent=" + bcontent

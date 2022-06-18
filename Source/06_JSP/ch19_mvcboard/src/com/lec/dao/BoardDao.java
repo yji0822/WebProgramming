@@ -46,7 +46,7 @@ public class BoardDao {
 		ResultSet rs = null;
 		
 		String sql = "SELECT *" + 
-				     "    FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY BGROUP DESC, BSTEP) A)\r\n" + 
+				     "    FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY BGROUP DESC, BSTEP) A)" + 
 				     "    WHERE RN BETWEEN ? AND ?";
 		
 		try {
@@ -55,7 +55,6 @@ public class BoardDao {
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery();
-			
 			while(rs.next()) {
 				 int bid = rs.getInt("bid");
 				 String bname = rs.getString("bname");
@@ -65,13 +64,12 @@ public class BoardDao {
 				 int bhit = rs.getInt("bhit");
 				 int bgroup = rs.getInt("bgroup");
 				 int bindent = rs.getInt("bindent");
-				 int bip = rs.getInt("bip");
-				
+				 String bip = rs.getString("bip");
 				dtos.add(new BoardDto(bid, bname, btitle, bcontent, 
 										bdate, bhit, bgroup, bindent, bip));
 			}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() + " list");
 		} finally {
 			try {
 				if(rs!=null) rs.close();
@@ -210,7 +208,7 @@ public class BoardDao {
 				 int bhit = rs.getInt("bhit");
 				 int bgroup = rs.getInt("bgroup");
 				 int bindent = rs.getInt("bindent");
-				 int bip = rs.getInt("bip");
+				 String bip = rs.getString("bip");
 				
 				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bindent, bip);
 			}
@@ -257,7 +255,7 @@ public class BoardDao {
 				 int bhit = rs.getInt("bhit");
 				 int bgroup = rs.getInt("bgroup");
 				 int bindent = rs.getInt("bindent");
-				 int bip = rs.getInt("bip");
+				 String bip = rs.getString("bip");
 				
 				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bindent, bip);
 			}
