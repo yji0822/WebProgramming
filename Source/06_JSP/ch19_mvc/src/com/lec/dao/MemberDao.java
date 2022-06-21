@@ -48,7 +48,6 @@ public class MemberDao {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		
 		String sql = "INSERT INTO MEMBER (ID, PW, NAME, BIRTH)" + 
 				     "    VALUES (?, ?, ?, ?)";
@@ -67,7 +66,6 @@ public class MemberDao {
 			System.out.println(e.getMessage());
 		} finally {
 			try {
-				if(rs!=null) rs.close();
 				if(pstmt!=null) pstmt.close();
 				if(conn!=null) conn.close();
 			} catch(SQLException e) {

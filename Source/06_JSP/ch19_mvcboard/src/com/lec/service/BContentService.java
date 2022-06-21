@@ -9,6 +9,7 @@ public class BContentService implements Service {
 
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
+
 		int bid = Integer.parseInt(request.getParameter("bid"));
 		BoardDao bDao = BoardDao.getInstance();
 		request.setAttribute("content_view", bDao.contentView(bid));

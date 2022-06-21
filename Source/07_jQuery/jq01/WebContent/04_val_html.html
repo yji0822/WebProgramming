@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style></style>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#msg').html('<b>안녕하세요 오늘은 화요일 입니다!</b>');
+		//$('#msg').text('<b>안녕하세요 오늘은 화요일 입니다!</b>');
+		
+		//var msg = $('#msg').html(); // msg = '<b>안녕하세요 오늘은 화요일 입니다!</b>';
+		var msg = $('#msg').text(); // msg = '안녕하세요 오늘은 화요일 입니다!'	
+		
+		alert(msg);
+		
+		// input type 안에 데이터를 넣는 경우 - 홑따옴표로 감싼 후에 name은 쌍따옴표
+		$('input[name="msg"]').val('내일은 수요일 입니다.');
+		msg = $('input[name="msg"]').val();
+		
+		alert(msg);
+	});
+	</script>
+</head>
+
+<body>
+	
+	<p id="msg"></p>
+	<p>메세지 <input type="text" name="msg"></p>
+	
+</body>
+</html>

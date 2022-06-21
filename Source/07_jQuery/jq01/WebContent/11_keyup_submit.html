@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+	
+	p:last-child {
+		padding-left: 20px;
+	}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		
+		// ,로 선택자를 추가할 수 있다.
+		$('input[name="pwChk"], input[name="pw"]').keyup(function(){
+			var pw = $('input[name="pw"]').val();
+			var pwChk = $('input[name="pwChk"]').val();
+			
+			if(pw == pwChk){
+				$('.result').html('<b>비밀번호 일치</b>');
+			} else {
+				$('.result').html('<b> 비밀번호 불일치</b>');
+			} // pw check
+		});
+		
+		$('form').submit(function(){
+			var resultMsg = $('.result').text().trim();
+			
+			if(resultMsg != '비밀번호 일치'){
+				alert('비밀번호를 확인하세요');
+				/* $('input[name ="pw"]').val('');
+				$('input[name ="pwChk"]').val('');
+				$('.result').html(''); 생략해서 사용한다 */
+				$('input[name="pw"]').focus();
+				return false;
+			}
+		});
+	});
+	</script>
+</head>
+
+<body>
+	
+	<form action="">
+		<p> id <input type="text" name="id"></p>
+		<p> pw <input type="text" name="pw"></p>
+		<p> pw <input type="text" name="pwChk"></p>
+		<p class="result"> &nbsp; &nbsp; </p> 
+		<input type="submit" value="가입하기">
+	</form>
+	
+</body>
+</html>

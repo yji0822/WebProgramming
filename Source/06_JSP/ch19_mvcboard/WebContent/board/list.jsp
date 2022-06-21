@@ -82,11 +82,11 @@
 						<td class="left">
 							<c:forEach var="i" begin="1" end="${dto.bindent }">
 								<c:if test="${i eq dto.bindent }">
-						  	└─
-						  </c:if>
-						  <c:if test="${i != dto.bindent }">
-						  	&nbstp; &nbstp; 
-						  </c:if> 
+						 		 	└─
+								  </c:if>
+						  		<c:if test="${i != dto.bindent }">
+						  			&nbstp; &nbstp; 
+						  		</c:if> 
 							</c:forEach> <!-- 답변글 들여쓰기 -->
 							<a href="${conPath }/content_view.do?bid=${dto.bid }&pageNum=${pageNum }">
 								${dto.btitle }

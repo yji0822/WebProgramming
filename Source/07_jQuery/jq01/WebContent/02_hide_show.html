@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			// p태그를 클릭하면 클릭한 내 자신(this)만 숨겨주는 기능
+			$('p').click(function(){
+				$(this).hide(); 
+			}); // 콜백함수
+			
+			// 태그 id(#)가 hideP1인 것을 클릭하면, id가 p1인 것을 숨겨준다 
+			$('#hideP1').click(function(){
+				$('#p1').hide(); // 매개변수 없는 함수
+			});
+			
+			// id hidePtag인 것을 클릭하면, p태그 모든 것을 숨겨준다 
+			$('#hidePtag').click(function(){
+				$('p').hide();
+				/* $('p').hide(fast); 매개변수가 들어갈 수 있지만 효과가 크지는 않다. */
+			});
+			
+			// button 중 id showPtag인 것을 클릭하면, p태그를 모두 보여준다
+			$('button#showPtag').click(function(){
+				$('p').show();
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<h1>이곳은 h1 태그</h1>
+	<p>이 p태그를 클릭하면 숨겨져요</p>
+	<p>이 p태그를 클릭하면 숨겨져요</p>
+	<p id="p1">요거 p1하나만도 숨겨져요</p>
+	
+	<button id="hideP1">p1 하나만 숨겨요</button>
+	<button id="hidePtag">p태그를 다 숨겨요</button>
+	<button id="showPtag">p태그를 다 나타내요</button>
+</body>
+</html>

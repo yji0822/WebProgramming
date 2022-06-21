@@ -42,7 +42,7 @@
 						<!-- getId를 호출해서 가져오는 것이다! -->
 						<td>${i }</td>
 						<td>${member.id }</td>
-						<td>${member.pw }</td>
+						<td>${member.pw }</td>	
 						<td>${member.name }</td>
 						<td><fmt:formatDate value="${member.birth }" pattern="MM월 dd일"/></td>
 						<td>${member.rdate }</td>

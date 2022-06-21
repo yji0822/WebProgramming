@@ -19,14 +19,31 @@
 
 	<!-- memberJoin.do -->
 	<!-- 헷갈리면 conPath 그냥 붙여주자! -->
+
 	<form action="${conPath }/memberJoin.do" name="join_frm" method="post">
 		<table>
+
 			<caption>회원가입</caption>
-			<tr><th>아이디</th><td><input type="text" name="id"></td></tr>
-			<tr><th>비밀번호</th><td><input type="password" name="pw"></td></tr>
-			<tr><th>확인 비밀번호</th><td><input type="password" name="pwChk"></td></tr>
-			<tr><th>이름</th><td><input type="text" name="name"></td></tr>
-			<tr><th>생년월일</th><td><input type="date" name="birth"></td></tr>
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="password" name="pw"></td>
+			</tr>
+			<tr>
+				<th>확인 비밀번호</th>
+				<td><input type="password" name="pwChk"></td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<th>생년월일</th>
+				<td><input type="date" name="birth"></td>
+			</tr>
 			<tr>
 				<td colspan="2">
 					<input type="button" value="회원가입" onclick="infoConfirm()" class="btn">
@@ -34,6 +51,7 @@
 					<input type="button" value="회원목록" onclick="location.href='${conPath }/memberList.do'" class="btn">
 				</td>
 			</tr>
+			
 		</table>
 	</form>
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		div#show {
+			width: 100px;
+			height: 100px;
+			background-color: navy;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function() {
+			$('#goShow').click(function(){
+				$('#show').show();
+			});
+			$('#goHide').click(function(){
+				$('#show').hide();
+			});
+			
+			/* toggle: 버튼을 누르면 토글링을 하도록 */
+			$('button').click(function(){
+				$('#show').toggle();
+			});
+		});
+	</script>
+</head>
+<body>
+	
+	<!-- 버튼을 한번 누르면 사라졌다가(hide) 다시 한번 더 누르면 보이게 하는 기능(show) -->
+	<button>토글링</button>
+	
+	<h1 id="goShow">보이기</h1>
+	<h1 id="goHide">사라지기</h1>
+	<div id="show"></div>
+	
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<style>
+		table td {background-color: #AAFFAA; width: 100px; height: 100px;}
+		.tdRed {background-color: red;}
+	</style>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('td').each(function(idx, item){
+			// 따로따로 이벤트를 건다라는 의미
+			$(this).click(function(){
+				alert(idx + '번째 선택 하셨군요');
+				$('td').removeClass('tdRed');
+				$(this).addClass('tdRed');
+			}); //
+		});
+		
+		/* td 통째로 이벤트를 건다는 의미
+		    $('td').on('click', function(){
+			$('td').removeClass('tdRed'); // 모든 td들 #aaffaa 색으로 원상복구
+			$(this).addClass('tdRed'); // 클릭하는 순간 모든 td들을 빨간색으로 변경 (class이름을 변경해서)
+			
+			var no = $(this).attr('id');
+			alert(no + '번째를 선택하셨군요!');
+			// 내가 클릭한 것을 가져오도록. 변수먼저 받아오고 
+		}); */
+	});
+	</script>
+</head>
+
+<body>
+	
+	<!-- 클래스를 여러개 둘 수 있다. 스페이스로 클래스 구분 id는 안됨! 무조건 하나 -->
+	<table>
+		<tr>
+			<td></td><td></td>
+		</tr>
+		<tr>
+			<td></td><td></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

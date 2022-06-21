@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#p1').click(function(){
+				// 누른 자기 자신을 따옴표 안에 있는 모든 텍스트들을 출력하는 text
+				$(this).text("<b>마피아 등장!</b>"); // <b>마피아 등장!</b> 
+				// html태그 안에 원하는 내용을 출력하도록 하는 html
+				
+			});
+			$('#p2').click(function(){
+				$(this).html("<b>경찰이 마피아 색출에 성공했습니다!!</b>");
+			});
+		});
+	</script>
+</head>
+<body>
+	<p id="p1">밤이 되었습니다. 마피아는 고개를 들어주세요!</p>
+	<p id="p2">경찰은 고개를 들어 마피아로 의심 되는 사람을 지목해주세요!</p>
+</body>
+</html>

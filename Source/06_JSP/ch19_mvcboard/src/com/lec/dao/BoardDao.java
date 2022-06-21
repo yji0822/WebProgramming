@@ -36,7 +36,7 @@ public class BoardDao {
 		}
 	} // try-catch
 	
-	// 글목록
+	// 글목록 - select / ArrayList<BoardDto> listBoard(int startRow, int endRow)
 	public ArrayList<BoardDto> listBoard(int startRow, int endRow) {
 		
 		ArrayList<BoardDto> dtos = new ArrayList<BoardDto>();
@@ -55,18 +55,22 @@ public class BoardDao {
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery();
+			
 			while(rs.next()) {
-				 int bid = rs.getInt("bid");
-				 String bname = rs.getString("bname");
-				 String btitle = rs.getString("btitle");
-				 String bcontent = rs.getString("bcontent");
-				 Date bdate = rs.getDate("bdate");
-				 int bhit = rs.getInt("bhit");
-				 int bgroup = rs.getInt("bgroup");
-				 int bindent = rs.getInt("bindent");
-				 String bip = rs.getString("bip");
-				dtos.add(new BoardDto(bid, bname, btitle, bcontent, 
-										bdate, bhit, bgroup, bindent, bip));
+				
+				int    bid     = rs.getInt("bid");
+				String bname   = rs.getString("bname");
+				String btitle  = rs.getString("btitle");
+				String bcontent= rs.getString("bcontent");
+				Date   bdate   = rs.getDate("bdate");
+				int    bhit    = rs.getInt("bhit");
+				int    bgroup  = rs.getInt("bgroup");
+				int    bstep   = rs.getInt("bstep");
+				int    bindent = rs.getInt("bindent");
+				String bip     = rs.getString("bip");
+			
+				dtos.add(new BoardDto(bid, bname, btitle, bcontent, bdate, 
+						bhit, bgroup, bstep, bindent, bip));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage() + " list");
@@ -83,8 +87,9 @@ public class BoardDao {
 		return dtos;
 	}
 	
-	// 전체 글 개수
+	// 전체 글 개수 count - SELECT / 1행 1열로 결과쿼리 고정
 	public int getBoardTotalCnt() {
+		
 		int totalCnt = 0;
 		
 		Connection conn = null;
@@ -200,17 +205,19 @@ public class BoardDao {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				 //int bid = rs.getInt("bid");
-				 String bname = rs.getString("bname");
-				 String btitle = rs.getString("btitle");
-				 String bcontent = rs.getString("bcontent");
-				 Date bdate = rs.getDate("bdate");
-				 int bhit = rs.getInt("bhit");
-				 int bgroup = rs.getInt("bgroup");
-				 int bindent = rs.getInt("bindent");
-				 String bip = rs.getString("bip");
-				
-				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bindent, bip);
+				//int    bid     = rs.getInt("bid");
+				String bname   = rs.getString("bname");
+				String btitle  = rs.getString("btitle");
+				String bcontent= rs.getString("bcontent");
+				Date   bdate   = rs.getDate("bdate");
+				int    bhit    = rs.getInt("bhit");
+				int    bgroup  = rs.getInt("bgroup");
+				int    bstep   = rs.getInt("bstep");
+				int    bindent = rs.getInt("bindent");
+				String bip     = rs.getString("bip");
+			
+				dto = new BoardDto(bid, bname, btitle, bcontent, 
+						bdate, bhit, bgroup, bstep, bindent, bip);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -247,17 +254,19 @@ public class BoardDao {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				 //int bid = rs.getInt("bid");
-				 String bname = rs.getString("bname");
-				 String btitle = rs.getString("btitle");
-				 String bcontent = rs.getString("bcontent");
-				 Date bdate = rs.getDate("bdate");
-				 int bhit = rs.getInt("bhit");
-				 int bgroup = rs.getInt("bgroup");
-				 int bindent = rs.getInt("bindent");
-				 String bip = rs.getString("bip");
+				//int    bid     = rs.getInt("bid");
+				String bname   = rs.getString("bname");
+				String btitle  = rs.getString("btitle");
+				String bcontent= rs.getString("bcontent");
+				Date   bdate   = rs.getDate("bdate");
+				int    bhit    = rs.getInt("bhit");
+				int    bgroup  = rs.getInt("bgroup");
+				int    bstep   = rs.getInt("bstep");
+				int    bindent = rs.getInt("bindent");
+				String bip     = rs.getString("bip");
 				
-				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bindent, bip);
+				dto = new BoardDto(bid, bname, btitle, bcontent, 
+						bdate, bhit, bgroup, bstep, bindent, bip);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -280,7 +289,7 @@ public class BoardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "UPDATE BOARD SET BSTEP = BSTEP+1 WHERE BGROUP = ? AND BSTEP > ?";
+		String sql = "UPDATE BOARD SET BSTEP=BSTEP+1 WHERE BGROUP = ? AND BSTEP > ?";
 		
 		try {
 			conn = ds.getConnection();
@@ -288,6 +297,7 @@ public class BoardDao {
 			pstmt.setInt(1, bgroup);
 			pstmt.setInt(2, bstep);
 			pstmt.executeUpdate();
+			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -325,6 +335,7 @@ public class BoardDao {
 			pstmt.setInt(5, bstep+1);
 			pstmt.setInt(6, bindent+1);
 			pstmt.setString(7, bip);
+			
 			result = pstmt.executeUpdate();
 			System.out.println(result == SUCCESS ? "답변글 성공" : "답변글 실패");
 			
@@ -344,6 +355,7 @@ public class BoardDao {
 	
 	// 글 수정
 	public int modify(int bid, String bname, String btitle, String bcontent, String bip) {
+		
 		int result = FAIL;
 		
 		Connection conn = null;

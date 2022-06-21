@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MemberDto {
+	
 	private String id;
 	private String pw;
 	private String name;
@@ -11,7 +12,6 @@ public class MemberDto {
 	private Date rdate;
 	
 	public MemberDto(String id, String pw, String name, Timestamp birth, Date rdate) {
-		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
