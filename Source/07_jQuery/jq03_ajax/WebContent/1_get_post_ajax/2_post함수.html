@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style></style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		
+		// 버튼을 클릭시 함수 로직 실행
+		$('button').click(function(){
+			var mId = $('input[name="mId"]').val();
+			// post 방식
+			$.post('idConfirm.jsp',
+					{mId : mId},
+					function(data, status){
+						if(status == 'success'){
+							$('#result').html(data);
+						}
+					});
+		}); // 버튼 클릭이벤트
+		
+		// 키보드의 입력이 끝날때마다 함수로직 실행
+		$('input[name="mId"]').keyup(function(){
+			var mId = $('input[name="mId"]').val();
+			$.post('idConfirm.jsp',
+					{mId : mId},
+					function(data, status){
+						if(status == 'success'){
+							$('#result').html(data);
+						}
+					});
+		});
+	});
+	</script>
+</head>
+
+<body>
+	
+	아이디 <input type="text" name="mId"> <button>중복체크</button><br>
+	<span id ="result"></span>	
+	
+</body>
+</html>

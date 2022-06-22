@@ -12,9 +12,10 @@
 <%
 	// idConfirm.jsp?mId=aaa
 	String mId = request.getParameter("mId");
-	MemberDao dao = MemberDao.getInstance();
 	
+	MemberDao dao = MemberDao.getInstance();
 	int result = dao.mIdConfirm(mId);
+	
 	if(result == MemberDao.EXISTENT ){
 		out.print("중복된 id입니다.");
 	} else {
