@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table {	border-collapse : collapse; /*border 밑에 줄이 생기게 해줌*/}
+		tr { border-bottom : 1px solid blue; }
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$.ajax({
+			
+			url  : 'ex.json', /* url : 'http://www.kbo.co.kr/ddd/doosan.json' */
+			/* data :  파라미터가 없으니 생략 */
+			dataType : 'json',
+			
+			success : function(data){
+				// 받아오는 것이 성공되면 data를 넣어준다!
+				out = '<tr><th>ID</th><th>NAME</th><th>PRICE</th><th>description</th><tr>'; // 타이틀 출력
+				// 배열 출력하는 로직 인덱스,데이터(0번째객체, 1번째 객체...이들이 들어온 것이다.)
+				/* data = [{name : '키위'}, {}] - 결과값이 이런식으로 들어온다 / each 함수 이용 */
+				$.each(data, function(idx, item){
+					out += '<tr><th>' +item.id + '</th><th>' + item.name + '</th><th>' + item.price 
+					+ '</th><th>' + item.description +'</th><tr>';
+				}); // $.each함수
+				// body에 출력
+				$('#dataShow').html(out);
+			} // success
+		}); // $.ajax 함수
+		
+	});
+	</script>
+</head>
+
+<body>
+	
+	<table id="dataShow">
+	
+	</table>
+	
+	
+</body>
+</html>

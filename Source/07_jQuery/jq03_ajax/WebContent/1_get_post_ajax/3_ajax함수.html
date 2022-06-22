@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style></style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			var mId = $('input[name="mId"]').val();
+			$.ajax({
+				// 속성 설명 - 속성에 반드시 써야하는 것은 * 표시
+				// url: 요청경로 /json을 받으면 객체 배열로 들어간다. *
+				// data : 요청 파라미터 이름과 파라미터 값 *
+				// type : get방식 / post 방식 (default는 get방식)
+				// dataType : html/json/.. 요청한 경로로 실행한 결과의 타입 *
+				// success : 성공시 수행할 콜백 함수 *
+				// error: 실패 시, 수행할 콜백 함수
+				url  : 'idConfirm.jsp',
+				data : 'mId='+mId,
+				type : 'get',
+				dataType : 'html',
+				success  : function(data){
+					$('#result').html(data);
+				}, // success일 경우에만 들어오므로 status 가 필요없다
+				error : function(code){
+					alert(code.status + code.statusText);
+					// 사용자에게 보이는 목적이 아닌 오류를 찾기 위한 목적으로 사용한다
+				}
+			});
+		});
+	});
+	</script>
+</head>
+
+<body>
+	
+	<p>
+	아이디 <input type="text" name="mId" id="mId">
+	<button>중복체크</button>
+	</p>
+	
+	<span id="result"></span>
+	
+</body>
+</html>
