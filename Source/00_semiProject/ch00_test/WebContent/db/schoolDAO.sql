@@ -22,13 +22,16 @@ UPDATE STUDENT SET SPW = '1',
                    STEL = '010-1111-2222',
                    SEMAIL = 'AAA@GMAIL.COM',
                    SGENDER = 'M',
-                   SBIRTH = '2009-10-10',
+                   SBIRTH = TO_DATE('1995-08-22', 'YYYY-MM-DD'),
                    SPHOTO = NULL
                 WHERE SID = 'aaa';
                 
 SELECT * FROM STUDENT;
 -- 6. 학생 리스트 출력 / 출석번호 순으로 페이징 -- 다시확인하기
 SELECT * FROM STUDENT S, POSITION P WHERE S.PNO = P.PNO;
+
+
+SELECT SNAME, TO_DATE(SBIRTH, 'YYYY-MM-DD') FROM STUDENT ORDER BY SNO;
 
 SELECT *
     FROM (SELECT ROWNUM RN, A.*
@@ -132,7 +135,13 @@ INSERT INTO REPLY (RNO, SID, RCONTENT, RIP, FNO)
     VALUES(R_SEQ.NEXTVAL, 'ccc', '밥', '128.1.1.1', 2);
 -- 2. 댓글 출력 글번호 FNO로 댓글 가져오기 
 SELECT * FROM REPLY R, FREE_BOARD F WHERE R.FNO = F.FNO ORDER BY R.RRDATE DESC;
+SELECT * FROM REPLY WHERE FNO = 1;
 
+-- 3. 댓글 삭제
+COMMIT;
+SELECT * FROM REPLY;
+DELETE FROM REPLY WHERE RNO = 1;
+ROLLBACK;
 ----------------------------------------------------------------------
 --                          NOTICE TABLE                            --
 ----------------------------------------------------------------------
@@ -156,6 +165,7 @@ INSERT INTO NOTICE_BOARD (NNO, AID, NTITLE, NCONTENT)
 UPDATE NOTICE_BOARD SET NHIT = NHIT +1 WHERE NNO=1;
 -- (5) bId로 글 dto보기
 SELECT N.*, ANAME FROM NOTICE_BOARD N, ADMIN A WHERE N.AID = A.AID AND NNO = 1;
+
 -- (6) 글 수정하기(FId, FTitle, FContent, FILENAME,  FIp, FDATE)
 UPDATE NOTICE_BOARD SET NTITLE = '바뀐제목공지사항',
                     NCONTENT = '바뀐공지사항확인해주세요',
@@ -164,6 +174,7 @@ UPDATE NOTICE_BOARD SET NTITLE = '바뀐제목공지사항',
 -- (7) 글 삭제하기(bId로 삭제하기)
 COMMIT;
 DELETE FROM NOTICE_BOARD WHERE NNO = 3;
+
 ROLLBACK;
 
 
