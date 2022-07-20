@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+	
+	<!-- 공통기능 : 핵심기능과 공통기능을 연결시켜주는 작업을 해주어야 한다.-->
+	<bean id="proxyClass" class="com.lec.ch05.ex1.ProxyClass"/>
+	
+	<!-- 핵심기능 빈 -->
+	<bean id="student" class="com.lec.ch05.ex1.Student">
+		<property name="name" value="홍길동"/>
+		<property name="age" value="12"/>
+		<property name="gradeNum" value="5"/>
+		<property name="classNum" value="6"/>
+	</bean>
+	
+	<bean id="worker" class="com.lec.ch05.ex1.Worker">
+		<property name="name" value="박길동"/>
+		<property name="age" value="28"/>
+		<property name="job" value="개발자"/>
+	</bean>
+	
+	<aop:config>
+		<aop:aspect id="aroundAspect" ref="proxyClass"> 
+			<!-- aspect: 공통기능 -->
+			<!-- within 은 괄호 안에 있는것 모든 것을 포함하는 것 의미 -->
+			<aop:pointcut expression="within(com.lec.ch05.ex1.*)" id="aroundM"/>
+			<!-- 연결해주는 것이 point / 어떤 것을 핵심 기능으로 넣을래? 라는 의미 
+			연결시켜주는 작업은 weaving 이라고 한다. -->
+			<aop:around method="aroundAdvice" pointcut-ref="aroundM"/> <!-- aroundAdvice라는 이름의 aroundM -->
+		</aop:aspect>
+		
+		<aop:aspect id="beforeAspect" ref="proxyClass">
+			<aop:pointcut expression="execution(void com.lec.ch05.ex1.Worker.*())" id="beforeM"/>
+			<aop:before method="beforeAdvice" pointcut-ref="beforeM"/>
+		</aop:aspect>
+		
+		<aop:aspect id="afterAspect" ref="proxyClass">
+			<aop:pointcut expression="bean(stud*)" id="afterM"/>
+			<aop:after method="afterAdvice" pointcut-ref="afterM"/>
+		</aop:aspect>
+		
+		<aop:aspect id="afterReturnAspect" ref="proxyClass"> 
+			<aop:pointcut expression="within(com.lec.ch05.ex1.Worker)" id="afterReturnM"/>
+			<aop:around method="afterReturningAdvice" pointcut-ref="afterReturnM"/> 
+		</aop:aspect>
+		
+		<!-- 예외가 발생되는 경우에만 실행되므로 적어놔도 실행은 되지 않음 -->
+		<aop:aspect id="afterThrowingAspect" ref="proxyClass"> 
+			<aop:pointcut expression="within(com.lec.ch05.ex1.Worker)" id="afterThrowingM"/>
+			<aop:around method="afterThrowingAdvice" pointcut-ref="afterThrowingM"/>
+		</aop:aspect>
+		
+	</aop:config>
+	
+	 
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- @Autowired를 인식해서 불러와서 쓸 수있도록 해주어야 한다. -->
+	<!-- 1. 있는지 없는지 확인 2. Namespaces에서 context 체크 해주고 아래 소스코드 써주어야 한다. 
+	API 사용한다면 보통은 들어가 있는 태그 -->
+	<context:annotation-config/>
+	
+	<!-- 매개변수 없는 생성자가 없기 때문에 생성자 함수의 매개변수 설정한 순서대로 값을 넣어주어야 한다. -->
+	<bean id="student" class="com.lec.ch03.ex1.Student">
+		<constructor-arg value="홍길동"/>
+		<constructor-arg value="11"/>
+		<constructor-arg>
+			<list>
+				<value>코딩</value>
+				<value>유튜브</value>
+				<value>영화감상</value>
+			</list>
+		</constructor-arg>
+		
+		<!-- 어제 했던 방식 -->
+		<property name="height" value="170"/>
+		<property name="weight" value="60"/>
+	</bean>
+	
+	<bean id="studentInfo" class="com.lec.ch03.ex1.StudentInfo">
+		<!-- studentInfo 안에 있는 student는 값이 전달이 안되었던 어제의 방식 -->
+		<!-- <property name="student" ref="student"/> -->
+		
+	</bean>
+
+</beans>

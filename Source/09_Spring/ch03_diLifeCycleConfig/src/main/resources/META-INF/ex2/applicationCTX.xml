@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- context 추가해주기 : 객체 생성하기 전처리, 후처리 작업 -->
+	<context:annotation-config/>
+	
+	<bean id="person" class="com.lec.ch03.ex2.Person" scope="singleton">
+		<constructor-arg value="홍길동"/>
+		<constructor-arg value="010-1234-5678"/>
+	</bean>
+	
+	<bean id="otherPerson" class="com.lec.ch03.ex2.OtherPerson">
+		<constructor-arg value="김길동"/>
+		<constructor-arg value="28" />
+	</bean>
+
+</beans>

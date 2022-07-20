@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 매개변수 없는 생성자 함수를 호출. Calculation에 매개변수 없는 생성자를 만들어주어야 한다. (@NoArgsConstructor) -->
+	<!-- id or name 모두 상관없다 -->
+	<bean id="calculation" class="com.lec.ch01.Calculation">
+		<property name="num1">
+			<value>50</value>
+		</property>
+		<property name="num2">
+			<value>10</value>
+		</property>
+	</bean>
+
+</beans>
